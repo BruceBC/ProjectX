@@ -258,7 +258,6 @@
         <!--View Controller-->
         <scene sceneID="hki-0d-vyY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ItN-Tg-NYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="skY-72-cYX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D4C-rL-IAY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -270,8 +269,41 @@
                         <inset key="imageInsets" minX="0.0" minY="21" maxX="0.0" maxY="-21"/>
                     </tabBarItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ItN-Tg-NYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1486" y="195"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kRw-cR-p0K">
+            <objects>
+                <viewController id="JnX-UH-Lsf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="16B-gw-g4j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kcg-O8-oVo" customClass="XibView" customModule="ProjectX" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="392" width="375" height="275"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="275" id="MmG-Df-8bC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="TwitterView"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dDZ-HT-1f6" firstAttribute="bottom" secondItem="Kcg-O8-oVo" secondAttribute="bottom" id="beO-ih-giO"/>
+                            <constraint firstItem="Kcg-O8-oVo" firstAttribute="leading" secondItem="dDZ-HT-1f6" secondAttribute="leading" id="mvC-uY-n6t"/>
+                            <constraint firstItem="dDZ-HT-1f6" firstAttribute="trailing" secondItem="Kcg-O8-oVo" secondAttribute="trailing" id="pLv-To-BSY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dDZ-HT-1f6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ATI-75-pTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2764" y="148.87556221889056"/>
         </scene>
     </scenes>
     <resources>

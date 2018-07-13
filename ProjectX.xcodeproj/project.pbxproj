@@ -41,6 +41,9 @@
 		EFAE418420F9122300621B0B /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418320F9122300621B0B /* UIImageView+Extensions.swift */; };
 		EFAE418620F9156400621B0B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418520F9156400621B0B /* UIButton+Extensions.swift */; };
 		EFAE418820F9162E00621B0B /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418720F9162E00621B0B /* Array+Extensions.swift */; };
+		EFAE418C20F939DF00621B0B /* TwitterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFAE418B20F939DF00621B0B /* TwitterView.xib */; };
+		EFAE418F20F93BBD00621B0B /* TwitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418E20F93BBD00621B0B /* TwitterView.swift */; };
+		EFAE419120F9401800621B0B /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE419020F9401800621B0B /* XibView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +105,9 @@
 		EFAE418320F9122300621B0B /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		EFAE418520F9156400621B0B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		EFAE418720F9162E00621B0B /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		EFAE418B20F939DF00621B0B /* TwitterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitterView.xib; sourceTree = "<group>"; };
+		EFAE418E20F93BBD00621B0B /* TwitterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterView.swift; sourceTree = "<group>"; };
+		EFAE419020F9401800621B0B /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +155,7 @@
 		EF32AD3F20F4F06C004EEB34 /* ProjectX */ = {
 			isa = PBXGroup;
 			children = (
-				EFAE418020F9096A00621B0B /* Examples */,
-				EFAE417D20F8EDAB00621B0B /* Extensions */,
+				EFAE418A20F939B200621B0B /* Shared */,
 				EF32AD9B20F7A71B004EEB34 /* Custom */,
 				EF32AD4020F4F06C004EEB34 /* AppDelegate.swift */,
 				EF32AD4220F4F06C004EEB34 /* ViewController.swift */,
@@ -269,6 +274,34 @@
 			path = Examples;
 			sourceTree = "<group>";
 		};
+		EFAE418920F9399700621B0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE418D20F93BA600621B0B /* Twitter */,
+				EFAE419020F9401800621B0B /* XibView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EFAE418A20F939B200621B0B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE418920F9399700621B0B /* Views */,
+				EFAE418020F9096A00621B0B /* Examples */,
+				EFAE417D20F8EDAB00621B0B /* Extensions */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		EFAE418D20F93BA600621B0B /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE418B20F939DF00621B0B /* TwitterView.xib */,
+				EFAE418E20F93BBD00621B0B /* TwitterView.swift */,
+			);
+			path = Twitter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -365,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF32AD9F20F7CD58004EEB34 /* CustomTabBar.xib in Resources */,
+				EFAE418C20F939DF00621B0B /* TwitterView.xib in Resources */,
 				EF32AD4E20F4F06F004EEB34 /* LaunchScreen.storyboard in Resources */,
 				EF32AD4B20F4F06F004EEB34 /* Assets.xcassets in Resources */,
 				EF32AD4620F4F06C004EEB34 /* Main.storyboard in Resources */,
@@ -408,12 +442,14 @@
 				EFAE418220F9097600621B0B /* Examples.swift in Sources */,
 				EFAE418820F9162E00621B0B /* Array+Extensions.swift in Sources */,
 				EFAE417F20F8EDBC00621B0B /* UIView+Blur.swift in Sources */,
+				EFAE418F20F93BBD00621B0B /* TwitterView.swift in Sources */,
 				EF32AD4320F4F06C004EEB34 /* ViewController.swift in Sources */,
 				EF32ADA120F7D2C9004EEB34 /* CustomTabBar.swift in Sources */,
 				EFAE418620F9156400621B0B /* UIButton+Extensions.swift in Sources */,
 				EF32AD9D20F7A776004EEB34 /* HomeTabBarViewController.swift in Sources */,
 				EF32AD4120F4F06C004EEB34 /* AppDelegate.swift in Sources */,
 				EFAE418420F9122300621B0B /* UIImageView+Extensions.swift in Sources */,
+				EFAE419120F9401800621B0B /* XibView.swift in Sources */,
 				EF32AD4920F4F06C004EEB34 /* ProjectX.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
