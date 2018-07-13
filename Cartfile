@@ -1,0 +1,2 @@
+github "Alamofire/Alamofire" "alamofire5"
+gitHub "mxcl/PromiseKit" ~> 6.2.9
