@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomTabBar" customModule="ProjectX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooy-Df-XLm">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mK7-DQ-C37">
+                    <rect key="frame" x="0.0" y="54" width="375" height="54"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kx9-cr-JTG">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E80-Vm-K4h">
+                            <rect key="frame" x="163.5" y="30" width="48" height="48"/>
+                            <state key="normal" image="circlePlus"/>
+                            <connections>
+                                <action selector="circlePlusAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ns0-2r-Ck7"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rE8-M8-JzA">
+                            <rect key="frame" x="110.5" y="42" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="X3Q-j9-aVq"/>
+                                <constraint firstAttribute="width" constant="24" id="zja-t1-LRB"/>
+                            </constraints>
+                            <state key="normal" image="search"/>
+                            <connections>
+                                <action selector="searchAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="hRW-Id-Zoi"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEx-CN-Miw">
+                            <rect key="frame" x="240.5" y="42" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="mO0-mP-olK"/>
+                                <constraint firstAttribute="height" constant="24" id="v19-uh-hgp"/>
+                            </constraints>
+                            <state key="normal" image="notification"/>
+                            <connections>
+                                <action selector="notifcationAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="MTJ-q0-RFs"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1o9-nd-Wcn">
+                            <rect key="frame" x="305.5" y="42" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="A8I-eL-UP9"/>
+                                <constraint firstAttribute="height" constant="24" id="uuO-1W-36t"/>
+                            </constraints>
+                            <state key="normal" image="message"/>
+                            <connections>
+                                <action selector="messageAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="SM7-nu-RPt"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rb4-Cr-6k8">
+                            <rect key="frame" x="45.5" y="42" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="Ae0-0c-zzf"/>
+                                <constraint firstAttribute="width" constant="24" id="Rir-tT-F7C"/>
+                            </constraints>
+                            <state key="normal" image="cloud"/>
+                            <connections>
+                                <action selector="cloudAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Elf-rW-SsX"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="1o9-nd-Wcn" firstAttribute="centerX" secondItem="Kx9-cr-JTG" secondAttribute="centerX" constant="130" id="6b9-8d-N59"/>
+                        <constraint firstItem="1o9-nd-Wcn" firstAttribute="centerY" secondItem="Kx9-cr-JTG" secondAttribute="centerY" id="Z3s-4f-hkF"/>
+                        <constraint firstItem="rb4-Cr-6k8" firstAttribute="centerY" secondItem="Kx9-cr-JTG" secondAttribute="centerY" id="aLV-Pk-4dS"/>
+                        <constraint firstItem="E80-Vm-K4h" firstAttribute="centerY" secondItem="Kx9-cr-JTG" secondAttribute="centerY" id="cdh-qY-N9m"/>
+                        <constraint firstItem="rb4-Cr-6k8" firstAttribute="centerX" secondItem="Kx9-cr-JTG" secondAttribute="centerX" constant="-130" id="gde-7X-ElP"/>
+                        <constraint firstItem="dEx-CN-Miw" firstAttribute="centerX" secondItem="Kx9-cr-JTG" secondAttribute="centerX" constant="65" id="ide-7J-vPB"/>
+                        <constraint firstItem="rE8-M8-JzA" firstAttribute="centerY" secondItem="Kx9-cr-JTG" secondAttribute="centerY" id="km5-wc-PGu"/>
+                        <constraint firstItem="rE8-M8-JzA" firstAttribute="centerX" secondItem="Kx9-cr-JTG" secondAttribute="centerX" constant="-65" id="la6-dm-3xa"/>
+                        <constraint firstItem="dEx-CN-Miw" firstAttribute="centerY" secondItem="Kx9-cr-JTG" secondAttribute="centerY" id="wio-9p-5Iw"/>
+                        <constraint firstItem="E80-Vm-K4h" firstAttribute="centerX" secondItem="Kx9-cr-JTG" secondAttribute="centerX" id="xfl-y4-9Uy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="mK7-DQ-C37" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6jr-1Z-nSP"/>
+                <constraint firstItem="mK7-DQ-C37" firstAttribute="height" secondItem="ooy-Df-XLm" secondAttribute="height" id="9I0-tp-bpY"/>
+                <constraint firstItem="Kx9-cr-JTG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="HBJ-HJ-TPh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Kx9-cr-JTG" secondAttribute="bottom" id="JZ2-nC-cqQ"/>
+                <constraint firstItem="ooy-Df-XLm" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Jd1-AC-A2T"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Kx9-cr-JTG" secondAttribute="trailing" id="NAh-pd-RWe"/>
+                <constraint firstItem="ooy-Df-XLm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Tqf-ON-ipy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ooy-Df-XLm" secondAttribute="trailing" id="XGz-Sa-Zat"/>
+                <constraint firstItem="mK7-DQ-C37" firstAttribute="top" secondItem="ooy-Df-XLm" secondAttribute="bottom" id="pMR-xh-Pc5"/>
+                <constraint firstItem="mK7-DQ-C37" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="tco-7r-hvY"/>
+                <constraint firstItem="Kx9-cr-JTG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="thK-MC-fre"/>
+                <constraint firstItem="mK7-DQ-C37" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="y1V-kw-322"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="cloudButton" destination="rb4-Cr-6k8" id="oVJ-Bs-Lf6"/>
+                <outlet property="messageButton" destination="1o9-nd-Wcn" id="qZh-4e-nTW"/>
+                <outlet property="notificationButton" destination="dEx-CN-Miw" id="sZO-Xn-neB"/>
+                <outlet property="plusCircleButton" destination="E80-Vm-K4h" id="aIr-b6-nzU"/>
+                <outlet property="searchButton" destination="rE8-M8-JzA" id="ljP-JM-bHr"/>
+            </connections>
+            <point key="canvasLocation" x="-137.5" y="-119"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circlePlus" width="48" height="48"/>
+        <image name="cloud" width="48" height="48"/>
+        <image name="message" width="48" height="48"/>
+        <image name="notification" width="48" height="48"/>
+        <image name="search" width="48" height="48"/>
+    </resources>
+</document>
