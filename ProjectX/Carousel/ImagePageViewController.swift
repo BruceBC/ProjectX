@@ -6,6 +6,7 @@
 //  Copyright © 2018 AmTrust. All rights reserved.
 //
 // Resource: https://medium.com/how-to-swift/how-to-create-a-uipageviewcontroller-a948047fb6af
+// Miguel: ImageView.masksToBound = true // A lifesaver!
 
 import UIKit
 
