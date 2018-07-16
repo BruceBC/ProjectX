@@ -36,6 +36,7 @@
 		EF32AD9D20F7A776004EEB34 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32AD9C20F7A776004EEB34 /* HomeTabBarViewController.swift */; };
 		EF32AD9F20F7CD58004EEB34 /* CustomTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF32AD9E20F7CD58004EEB34 /* CustomTabBar.xib */; };
 		EF32ADA120F7D2C9004EEB34 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32ADA020F7D2C9004EEB34 /* CustomTabBar.swift */; };
+		EF8E1F0B20FD2E0200E6DCB9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */; };
 		EFAE417F20F8EDBC00621B0B /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */; };
 		EFAE418220F9097600621B0B /* Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418120F9097600621B0B /* Examples.swift */; };
 		EFAE418420F9122300621B0B /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418320F9122300621B0B /* UIImageView+Extensions.swift */; };
@@ -104,6 +105,7 @@
 		EF32AD9C20F7A776004EEB34 /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
 		EF32AD9E20F7CD58004EEB34 /* CustomTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBar.xib; sourceTree = "<group>"; };
 		EF32ADA020F7D2C9004EEB34 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
 		EFAE418120F9097600621B0B /* Examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examples.swift; sourceTree = "<group>"; };
 		EFAE418320F9122300621B0B /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			children = (
 				EFAE41A320F9505600621B0B /* ImagePageViewController.swift */,
 				EFAE41A020F94E6B00621B0B /* ImageViewController.swift */,
+				EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */,
 			);
 			path = Carousel;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				EF32AD4120F4F06C004EEB34 /* AppDelegate.swift in Sources */,
 				EFAE418420F9122300621B0B /* UIImageView+Extensions.swift in Sources */,
 				EFAE41B020FCEE1B00621B0B /* String+Extensions.swift in Sources */,
+				EF8E1F0B20FD2E0200E6DCB9 /* ProfileViewModel.swift in Sources */,
 				EFAE419120F9401800621B0B /* XibView.swift in Sources */,
 				EF32AD4920F4F06C004EEB34 /* ProjectX.xcdatamodeld in Sources */,
 				EFAE41A420F9505600621B0B /* ImagePageViewController.swift in Sources */,
