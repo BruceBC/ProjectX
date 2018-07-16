@@ -176,51 +176,61 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtE-mj-woI">
                                 <rect key="frame" x="0.0" y="418" width="375" height="200"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nYB-AR-Udv">
-                                        <rect key="frame" x="20" y="40" width="335" height="45"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYP-4D-lhH">
+                                        <rect key="frame" x="20" y="40" width="335" height="50"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Pm2-kZ-SS0">
-                                                <rect key="frame" x="0.0" y="1.5" width="162.5" height="42"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfT-2R-8Ab">
-                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="yhH-Ak-TwD"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                        <color key="textColor" red="0.1764705882352941" green="0.20392156862745098" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lks-iF-2a0">
-                                                        <rect key="frame" x="0.0" y="22" width="162.5" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="Ju3-tR-DM5"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                                        <color key="textColor" red="0.38823529411764707" green="0.43137254901960786" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGD-DO-hgB">
-                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="45"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfT-2R-8Ab">
+                                                <rect key="frame" x="0.0" y="5" width="157.5" height="20"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="yhH-Ak-TwD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <color key="textColor" red="0.1764705882352941" green="0.20392156862745098" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lks-iF-2a0">
+                                                <rect key="frame" x="0.0" y="25" width="157.5" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Ju3-tR-DM5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                <color key="textColor" red="0.38823529411764707" green="0.43137254901960786" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGD-DO-hgB">
+                                                <rect key="frame" x="167.5" y="3" width="167.5" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="167.5" id="dUO-5Y-Y9i"/>
                                                     <constraint firstAttribute="height" constant="45" id="h4O-Mg-FUq"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <state key="normal" title="FOLLOW">
                                                     <color key="titleColor" red="0.83921568627450982" green="0.18823529411764706" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="followAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0N-Ek-MJk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                    </stackView>
+                                        <constraints>
+                                            <constraint firstItem="gGD-DO-hgB" firstAttribute="centerY" secondItem="UYP-4D-lhH" secondAttribute="centerY" id="9Sx-kE-oY0"/>
+                                            <constraint firstItem="gGD-DO-hgB" firstAttribute="leading" secondItem="YfT-2R-8Ab" secondAttribute="trailing" constant="10" id="9kc-N4-XJS"/>
+                                            <constraint firstItem="gGD-DO-hgB" firstAttribute="leading" secondItem="lks-iF-2a0" secondAttribute="trailing" constant="10" id="EWK-Kc-beZ"/>
+                                            <constraint firstItem="lks-iF-2a0" firstAttribute="centerY" secondItem="UYP-4D-lhH" secondAttribute="centerY" constant="10" id="KjE-Un-b0P"/>
+                                            <constraint firstAttribute="height" constant="50" id="NgU-YJ-t1u"/>
+                                            <constraint firstAttribute="trailing" secondItem="gGD-DO-hgB" secondAttribute="trailing" id="Nr7-eO-Goi"/>
+                                            <constraint firstItem="lks-iF-2a0" firstAttribute="leading" secondItem="UYP-4D-lhH" secondAttribute="leading" id="cnP-2R-e82"/>
+                                            <constraint firstItem="YfT-2R-8Ab" firstAttribute="leading" secondItem="UYP-4D-lhH" secondAttribute="leading" id="vBI-8T-RgF"/>
+                                            <constraint firstItem="YfT-2R-8Ab" firstAttribute="centerY" secondItem="UYP-4D-lhH" secondAttribute="centerY" constant="-10" id="yeV-lV-tPj"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="nYB-AR-Udv" secondAttribute="trailing" constant="20" id="5bv-5c-vur"/>
                                     <constraint firstAttribute="height" constant="200" id="7HB-x3-Q1a"/>
-                                    <constraint firstItem="nYB-AR-Udv" firstAttribute="leading" secondItem="RtE-mj-woI" secondAttribute="leading" constant="20" id="SeV-Vh-j8o"/>
-                                    <constraint firstItem="nYB-AR-Udv" firstAttribute="top" secondItem="RtE-mj-woI" secondAttribute="top" constant="40" id="m1v-Hd-TQp"/>
+                                    <constraint firstItem="UYP-4D-lhH" firstAttribute="top" secondItem="RtE-mj-woI" secondAttribute="top" constant="40" id="JcX-w4-9Gm"/>
+                                    <constraint firstAttribute="trailing" secondItem="UYP-4D-lhH" secondAttribute="trailing" constant="20" id="ldi-zt-Xri"/>
+                                    <constraint firstItem="UYP-4D-lhH" firstAttribute="leading" secondItem="RtE-mj-woI" secondAttribute="leading" constant="20" id="qam-wf-8rw"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -247,6 +257,8 @@
                         <outlet property="bottomView" destination="RtE-mj-woI" id="FST-7D-tGe"/>
                         <outlet property="bottomViewBottomConstraint" destination="9vB-lC-sXf" id="BUt-JA-0Iv"/>
                         <outlet property="followButton" destination="gGD-DO-hgB" id="Cux-al-vPn"/>
+                        <outlet property="followButtonHeightConstraint" destination="h4O-Mg-FUq" id="nWC-Lz-aYk"/>
+                        <outlet property="followButtonWidthConstraint" destination="dUO-5Y-Y9i" id="BCB-oh-GIV"/>
                         <outlet property="followerCountLabel" destination="tKB-E5-Tcw" id="bqj-XF-Ayq"/>
                         <outlet property="followerLabel" destination="Gyg-DA-HQb" id="fkd-3V-3B4"/>
                         <outlet property="followerStackView" destination="dee-ge-PBh" id="dAa-QQ-oIl"/>

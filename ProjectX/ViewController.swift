@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var followButton: UIButton!
+    @IBOutlet weak var followButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var followButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomViewBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
@@ -39,6 +41,12 @@ class ViewController: UIViewController {
         setupLabels()
         setupButtons()
     }
+    
+    // MARK: - IBActions
+    @IBAction func followAction(_ sender: Any) {
+        animateFollowAction()
+    }
+    
 }
 
 // MARK: - Setup
@@ -135,5 +143,33 @@ extension ViewController {
         
         // Begin Animation
         UIView.animate(withDuration: 0.6, animations: shrink, completion: completion)
+    }
+}
+
+// MARK: - Helpers
+extension ViewController {
+    func animateFollowAction() {
+        followButton.setTitle(nil, for: .normal)
+        let width = CGFloat(35)
+        let animation = {
+            self.followButton.backgroundColor = .red
+            self.followButton.setTitleColor(.red, for: .normal)
+            self.followButton.layer.borderColor = UIColor.red.cgColor
+            self.followButton.layer.cornerRadius = width / 2
+            self.followButtonHeightConstraint.constant = width
+            self.followButtonWidthConstraint.constant = width
+            self.view.layoutIfNeeded()
+        }
+        let completion = { (_:Bool) in
+            self.followButton.setImage(#imageLiteral(resourceName: "person"), for: .normal)
+            self.followButton.setImageColor(.white)
+            self.followButton.imageView?.alpha = 0
+            self.followButton.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5)
+            
+            UIView.animate(withDuration: 0.3) {
+                self.followButton.imageView?.alpha = 1
+            }
+        }
+        UIView.animate(withDuration: 0.6, animations: animation, completion: completion)
     }
 }
