@@ -44,6 +44,10 @@
 		EFAE418C20F939DF00621B0B /* TwitterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFAE418B20F939DF00621B0B /* TwitterView.xib */; };
 		EFAE418F20F93BBD00621B0B /* TwitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418E20F93BBD00621B0B /* TwitterView.swift */; };
 		EFAE419120F9401800621B0B /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE419020F9401800621B0B /* XibView.swift */; };
+		EFAE41A120F94E6B00621B0B /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE41A020F94E6B00621B0B /* ImageViewController.swift */; };
+		EFAE41A420F9505600621B0B /* ImagePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE41A320F9505600621B0B /* ImagePageViewController.swift */; };
+		EFAE41AE20FCEDFB00621B0B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE41AD20FCEDFB00621B0B /* UIView+Extensions.swift */; };
+		EFAE41B020FCEE1B00621B0B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE41AF20FCEE1B00621B0B /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +112,10 @@
 		EFAE418B20F939DF00621B0B /* TwitterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitterView.xib; sourceTree = "<group>"; };
 		EFAE418E20F93BBD00621B0B /* TwitterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterView.swift; sourceTree = "<group>"; };
 		EFAE419020F9401800621B0B /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		EFAE41A020F94E6B00621B0B /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		EFAE41A320F9505600621B0B /* ImagePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePageViewController.swift; sourceTree = "<group>"; };
+		EFAE41AD20FCEDFB00621B0B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		EFAE41AF20FCEE1B00621B0B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +163,7 @@
 		EF32AD3F20F4F06C004EEB34 /* ProjectX */ = {
 			isa = PBXGroup;
 			children = (
+				EFAE41A220F9502D00621B0B /* Carousel */,
 				EFAE418A20F939B200621B0B /* Shared */,
 				EF32AD9B20F7A71B004EEB34 /* Custom */,
 				EF32AD4020F4F06C004EEB34 /* AppDelegate.swift */,
@@ -262,6 +271,8 @@
 				EFAE418320F9122300621B0B /* UIImageView+Extensions.swift */,
 				EFAE418520F9156400621B0B /* UIButton+Extensions.swift */,
 				EFAE418720F9162E00621B0B /* Array+Extensions.swift */,
+				EFAE41AD20FCEDFB00621B0B /* UIView+Extensions.swift */,
+				EFAE41AF20FCEE1B00621B0B /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -300,6 +311,15 @@
 				EFAE418E20F93BBD00621B0B /* TwitterView.swift */,
 			);
 			path = Twitter;
+			sourceTree = "<group>";
+		};
+		EFAE41A220F9502D00621B0B /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE41A320F9505600621B0B /* ImagePageViewController.swift */,
+				EFAE41A020F94E6B00621B0B /* ImageViewController.swift */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,12 +465,16 @@
 				EFAE418F20F93BBD00621B0B /* TwitterView.swift in Sources */,
 				EF32AD4320F4F06C004EEB34 /* ViewController.swift in Sources */,
 				EF32ADA120F7D2C9004EEB34 /* CustomTabBar.swift in Sources */,
+				EFAE41AE20FCEDFB00621B0B /* UIView+Extensions.swift in Sources */,
+				EFAE41A120F94E6B00621B0B /* ImageViewController.swift in Sources */,
 				EFAE418620F9156400621B0B /* UIButton+Extensions.swift in Sources */,
 				EF32AD9D20F7A776004EEB34 /* HomeTabBarViewController.swift in Sources */,
 				EF32AD4120F4F06C004EEB34 /* AppDelegate.swift in Sources */,
 				EFAE418420F9122300621B0B /* UIImageView+Extensions.swift in Sources */,
+				EFAE41B020FCEE1B00621B0B /* String+Extensions.swift in Sources */,
 				EFAE419120F9401800621B0B /* XibView.swift in Sources */,
 				EF32AD4920F4F06C004EEB34 /* ProjectX.xcdatamodeld in Sources */,
+				EFAE41A420F9505600621B0B /* ImagePageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

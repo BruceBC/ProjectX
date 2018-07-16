@@ -24,8 +24,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var followButton: UIButton!
-    @IBOutlet weak var profileButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var bottomViewBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
@@ -85,9 +83,6 @@ extension ViewController {
         followButton.layer.borderWidth = 2
         followButton.layer.borderColor = followButton.titleColor(for: .normal)?.cgColor
         followButton.layer.cornerRadius = followButton.frame.width / 8
-        
-        profileButton.setImageColor(.white)
-        cancelButton.setImageColor(.white)
     }
     
     func setupUser() {
@@ -140,30 +135,5 @@ extension ViewController {
         
         // Begin Animation
         UIView.animate(withDuration: 0.6, animations: shrink, completion: completion)
-    }
-}
-
-extension UIView {
-    func fadeTransition(_ duration: CFTimeInterval) {
-        let animation = CATransition()
-        animation.timingFunction = CAMediaTimingFunction(name:
-            kCAMediaTimingFunctionEaseInEaseOut)
-        animation.type = kCATransitionFade
-        animation.duration = duration
-        layer.add(animation, forKey: kCATransitionFade)
-    }
-}
-
-extension String {
-    func capitalizingFirstLetter() -> String {
-        return prefix(1).uppercased() + dropFirst()
-    }
-    
-    mutating func capitalizeFirstLetter() {
-        self = self.capitalizingFirstLetter()
-    }
-    
-    func capitalizeEveryFirstLetter() -> String {
-        return components(separatedBy: " ").map { $0.capitalizingFirstLetter() }.joined(separator: " ")
     }
 }
