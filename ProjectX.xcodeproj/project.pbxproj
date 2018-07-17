@@ -37,6 +37,7 @@
 		EF32AD9F20F7CD58004EEB34 /* CustomTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF32AD9E20F7CD58004EEB34 /* CustomTabBar.xib */; };
 		EF32ADA120F7D2C9004EEB34 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32ADA020F7D2C9004EEB34 /* CustomTabBar.swift */; };
 		EF8E1F0B20FD2E0200E6DCB9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */; };
+		EF8E1F0D20FD402700E6DCB9 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0C20FD402700E6DCB9 /* Shared.swift */; };
 		EFAE417F20F8EDBC00621B0B /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */; };
 		EFAE418220F9097600621B0B /* Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418120F9097600621B0B /* Examples.swift */; };
 		EFAE418420F9122300621B0B /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418320F9122300621B0B /* UIImageView+Extensions.swift */; };
@@ -106,6 +107,7 @@
 		EF32AD9E20F7CD58004EEB34 /* CustomTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBar.xib; sourceTree = "<group>"; };
 		EF32ADA020F7D2C9004EEB34 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		EF8E1F0C20FD402700E6DCB9 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
 		EFAE418120F9097600621B0B /* Examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examples.swift; sourceTree = "<group>"; };
 		EFAE418320F9122300621B0B /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
@@ -266,6 +268,14 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		EF8E1F0E20FD403E00E6DCB9 /* StateManagement */ = {
+			isa = PBXGroup;
+			children = (
+				EF8E1F0C20FD402700E6DCB9 /* Shared.swift */,
+			);
+			path = StateManagement;
+			sourceTree = "<group>";
+		};
 		EFAE417D20F8EDAB00621B0B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +309,7 @@
 		EFAE418A20F939B200621B0B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				EF8E1F0E20FD403E00E6DCB9 /* StateManagement */,
 				EFAE418920F9399700621B0B /* Views */,
 				EFAE418020F9096A00621B0B /* Examples */,
 				EFAE417D20F8EDAB00621B0B /* Extensions */,
@@ -468,6 +479,7 @@
 				EFAE418F20F93BBD00621B0B /* TwitterView.swift in Sources */,
 				EF32AD4320F4F06C004EEB34 /* ViewController.swift in Sources */,
 				EF32ADA120F7D2C9004EEB34 /* CustomTabBar.swift in Sources */,
+				EF8E1F0D20FD402700E6DCB9 /* Shared.swift in Sources */,
 				EFAE41AE20FCEDFB00621B0B /* UIView+Extensions.swift in Sources */,
 				EFAE41A120F94E6B00621B0B /* ImageViewController.swift in Sources */,
 				EFAE418620F9156400621B0B /* UIButton+Extensions.swift in Sources */,
