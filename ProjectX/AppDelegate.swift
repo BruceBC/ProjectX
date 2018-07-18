@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import ProjectXCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        fetchUsersInParallel()
+        
         return true
     }
 
@@ -89,5 +93,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate {
+    var userGetterInteractor: UserGetterInteractor.Type {
+        return UserGetterInteractor.self
+    }
+    
+    // Resource: https://medium.com/@oleary.audio/simultaneous-asynchronous-calls-in-swift-9c1f5fd3ea32
+    private func fetchUsersInParallel(_ amount: Int = 4) {
+        OperationQueue().addOperation {
+            let group = DispatchGroup()
+            
+            for _ in 0..<amount {
+                group.enter()
+                self.fetchUsers() { group.leave() }
+            }
+            
+            group.wait()
+            
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .didFetchUsers, object: nil)
+            }
+        }
+    }
+    
+    private func fetchUsers(_ completion: @escaping () -> Void) {
+        userGetterInteractor.getUser() { result in
+            switch result {
+            case .success(let user):
+                StateManager.shared.users.append(user)
+                completion()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
 

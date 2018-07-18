@@ -9,10 +9,10 @@
 import Foundation
 import ProjectXCore
 
-class Shared {
+class StateManager {
     // MARK: - Properties
-    static let shared = Shared()
+    static let shared = StateManager()
     
     // MARK: -
-    var user: [User] = []
+    var users: [User] = []
 }

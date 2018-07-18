@@ -24,6 +24,7 @@ public struct User {
     public let phone:     String
     public let address:   Address
     public let picture:   Picture
+    public var twitter:   Twitter
 }
 
 extension User: Decodable {
@@ -42,6 +43,12 @@ extension User: Decodable {
         phone     = result.phone
         address   = result.location
         picture   = result.picture
+        
+        let followers = TwitterTally(title: "followers", count: Double(arc4random_uniform(2000)))
+        let posts     = TwitterTally(title: "posts",     count: Double(arc4random_uniform(2000)))
+        let following = TwitterTally(title: "following", count: Double(arc4random_uniform(2000)))
+
+        twitter = Twitter(followers: followers, posts: posts, following: following)
     }
 }
 
