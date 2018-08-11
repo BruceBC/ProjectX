@@ -38,7 +38,7 @@ class HomeTabBarViewController: UITabBarController {
             customTabBar.actions = [
                 .cloud({self.selectedIndex = 0}),
                 .search({self.selectedIndex = 1}),
-                .circlePlus({}),
+                .circlePlus({self.circlePlusAction()}),
                 .notification({self.selectedIndex = 2}),
                 .message({self.selectedIndex = 3})
             ]
@@ -62,6 +62,17 @@ extension HomeTabBarViewController {
     }
 }
 
+//MARK: -  TabBarButton Actions
+extension HomeTabBarViewController {
+    private func circlePlusAction() {
+        let storyboard = UIStoryboard(name: "List", bundle: nil)
+        guard let vc = storyboard.instantiateInitialViewController() else { return }
+        present(vc, animated: true, completion: nil)
+    }
+}
+
+
+// MARK: - Helpers
 extension UIView {
     func roundCorners(corners:UIRectCorner, size:CGFloat){
         let path = UIBezierPath(roundedRect:self.bounds,
