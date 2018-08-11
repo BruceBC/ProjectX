@@ -14,4 +14,5 @@ protocol Routable: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }
     var parameters: Parameters? { get }
+    var encoding: ParameterEncoding { get }
 }
