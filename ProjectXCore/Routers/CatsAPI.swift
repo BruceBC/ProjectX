@@ -1,44 +1,42 @@
 //
-//  Router.swift
+//  CatsAPI.swift
 //  ProjectXCore
 //
-//  Created by Bruce Colby on 7/10/18.
+//  Created by Bruce Colby on 8/10/18.
 //  Copyright © 2018 AmTrust. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-enum RandomAPI: Routable {
+enum CatsAPI: Routable {
+    case images
     
-    case person
-    
-    // MARK: - Base URL
     var baseUrl: String {
-        return "https://randomuser.me"
+        return "http://thecatapi.com/api/images"
     }
     
-    // MARK: - HTTPMethod
     var method: HTTPMethod {
         switch self {
-        case .person:
+        case .images:
             return .get
         }
     }
     
-    // MARK: - Path
     var path: String {
         switch self {
-        case .person:
-            return "/api/"
+        case .images:
+            return "/get"
         }
     }
     
-    // MARK: - Parameters
     var parameters: Parameters? {
         switch self {
-        case .person:
-            return nil
+        case .images:
+            return [
+                "format"          : "xml",
+                "results_per_page": 20
+            ]
         }
     }
     
@@ -60,15 +58,20 @@ enum RandomAPI: Routable {
         urlRequest.httpMethod = method.rawValue
         
         // Common Headers
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
+        urlRequest.setValue(ContentType.xml.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         
         // Parameters
-        if let parameters = parameters {
-            do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-            } catch {
-                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
+        switch method {
+        case .get:
+            urlRequest = try encoding.encode(urlRequest, with: parameters)
+        default:
+            // TODO: Check if I need this when posting data
+            if let parameters = parameters {
+                do {
+                    urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+                } catch {
+                    throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
+                }
             }
         }
         
