@@ -8,10 +8,6 @@
 
 import Foundation
 
-public enum JSONError: Error {
-    case empty(String)
-}
-
 public struct User {
     public let id:        String
     public let username:  String
