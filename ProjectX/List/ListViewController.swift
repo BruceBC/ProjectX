@@ -51,11 +51,9 @@ extension ListViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listReuseidentifier, for: indexPath) as? ListCell else { return UICollectionViewCell() }
-        cell.layer.shouldRasterize = true
-        cell.layer.rasterizationScale = UIScreen.main.scale
         
         if isLoadingCell(for: indexPath) {
-            cell.setup(with: ListViewModel(image: #imageLiteral(resourceName: "trainGuy")))
+            cell.setup(with: ListViewModel(image: #imageLiteral(resourceName: "trainGuy"), url: nil, isGif: false))
         } else {
             let model = models[indexPath.row]
             cell.setup(with: model)
@@ -98,7 +96,7 @@ extension ListViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
-// MARK: - Network
+// MARK: - Network Requests
 extension ListViewController {
     private func fetchCats() {
         guard !isFetching else { return }
@@ -107,30 +105,80 @@ extension ListViewController {
         CatInteractor.getImages { result in
             switch result {
             case .success(let cat):
-                DispatchQueue.main.async {
-                    
-                    self.page += 1
-                    self.total = 1000
-                    self.isFetching = false
-                    let models = cat.images.map { ListViewModel(image: $0.image ?? #imageLiteral(resourceName: "trainGuy")) }
-                    self.models.append(contentsOf: models)
-                    
-                    if self.page > 1 {
-                        // Subsequent page
-                        let indexPathsToReload = self.calculateIndexPathsToReload(from: models)
-                        self.onFetchCompleted(with: indexPathsToReload)
-                    } else {
-                        // First page
-                        self.onFetchCompleted(with: .none)
-                    }
-                }
+                self.onFetchCatSuccess(cat)
             case .error(let error):
-                DispatchQueue.main.async {
-//                    self.isFetching = false
-                    print(error.localizedDescription)
-                }
+                self.onFetchCatFailure(error)
             }
         }
+    }
+}
+
+// MARK: - Network Events
+extension ListViewController {
+    private func onFetchCatSuccess(_ cat: Cat) {
+        OperationQueue().addOperation {
+            let group = DispatchGroup()
+            
+            var models: [ListViewModel] = []
+            
+            cat.images.forEach {
+                group.enter()
+                let url = $0.url
+                $0.image { (image, isGif) in
+                    models.append(ListViewModel(image: image ?? #imageLiteral(resourceName: "trainGuy"), url: url, isGif: isGif))
+                    group.leave()
+                }
+            }
+            
+            group.wait()
+            
+            DispatchQueue.main.async {
+                self.didLoadViewModels(models)
+            }
+        }
+    }
+    
+    private func onFetchCatFailure(_ error: Error) {
+        DispatchQueue.main.async {
+            self.isFetching = false
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func didLoadViewModels(_ models: [ListViewModel], completion: (() -> Void)? = nil) {
+        self.page += 1
+        self.total = 1000
+        self.isFetching = false
+        
+        self.models.append(contentsOf: models)
+        
+        if self.page > 1 {
+            // Subsequent page
+            let indexPathsToReload = self.calculateIndexPathsToReload(from: models)
+            self.onFetchCompleted(with: indexPathsToReload)
+        } else {
+            // First page
+            self.onFetchCompleted(with: .none)
+        }
+        
+        completion?()
+    }
+    
+    private func onFetchCompleted(with nexIndexPathsToReload: [IndexPath]?) {
+        guard let newIndexPathsToReload = nexIndexPathsToReload else {
+            self.collectionView.reloadData()
+            return
+        }
+        
+        let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
+        collectionView.reloadItems(at: indexPathsToReload)
+    }
+}
+
+// MARK: - Collection View Helpers
+extension ListViewController {
+    private func isLoadingCell(for indexPath: IndexPath) -> Bool {
+        return indexPath.row >= models.count
     }
     
     private func calculateIndexPathsToReload(from newModels: [ListViewModel]) -> [IndexPath] {
@@ -139,29 +187,10 @@ extension ListViewController {
         
         return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
-}
-
-// MARK: - Helpers
-extension ListViewController {
-    func isLoadingCell(for indexPath: IndexPath) -> Bool {
-        // TODO: Figure out what viewModel.currentCount should be
-        print("indexPath: \(indexPath.row), currentCount: \(models.count)")
-        return indexPath.row >= models.count
-    }
     
-    func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
+    private func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
         let indexPathsForVisibleRows = collectionView.indexPathsForVisibleItems
         let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
         return Array(indexPathsIntersection)
-    }
-    
-    func onFetchCompleted(with nexIndexPathsToReload: [IndexPath]?) {
-        guard let newIndexPathsToReload = nexIndexPathsToReload else {
-            self.collectionView.reloadData()
-            return
-        }
-        
-        let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
-        collectionView.reloadItems(at: indexPathsToReload)
     }
 }

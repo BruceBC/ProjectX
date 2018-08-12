@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyGif
 
 class ListCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
@@ -14,6 +15,11 @@ class ListCell: UICollectionViewCell {
 
 extension ListCell {
     func setup(with model: ListViewModel) {
+        if model.isGif {
+            // FIXME: This is why images are repeating
+            imageView.setGifImage(model.image)
+        }
+        
         imageView.image = model.image
     }
 }

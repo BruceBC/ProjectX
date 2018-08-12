@@ -10,8 +10,12 @@ import UIKit
 
 struct ListViewModel {
     let image: UIImage
+    let url:   String?
+    let isGif: Bool
     
-    init(image: UIImage) {
+    init(image: UIImage, url: String?, isGif: Bool) {
         self.image = image
+        self.url   = url
+        self.isGif = isGif
     }
 }

@@ -53,6 +53,9 @@
 		EF3ABFA8211E2A80007594E7 /* XMLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFA7211E2A80007594E7 /* XMLError.swift */; };
 		EF3ABFAA211E2AA2007594E7 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFA9211E2AA2007594E7 /* JSONError.swift */; };
 		EF3ABFAD211E2ACD007594E7 /* XMLResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFAC211E2ACD007594E7 /* XMLResult.swift */; };
+		EF3ABFBA211F6EDE007594E7 /* SwiftyGif.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3ABFB9211F6EB8007594E7 /* SwiftyGif.framework */; };
+		EF3ABFBB211F6EF1007594E7 /* SwiftyGif.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3ABFB9211F6EB8007594E7 /* SwiftyGif.framework */; };
+		EF3ABFBC211F6EF1007594E7 /* SwiftyGif.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF3ABFB9211F6EB8007594E7 /* SwiftyGif.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EF8E1F0B20FD2E0200E6DCB9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */; };
 		EF8E1F0D20FD402700E6DCB9 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0C20FD402700E6DCB9 /* StateManager.swift */; };
 		EFAE417F20F8EDBC00621B0B /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */; };
@@ -139,6 +142,34 @@
 			remoteGlobalIDString = CD6083EE196CA106000B4F8D;
 			remoteInfo = "SWXMLHash iOS";
 		};
+		EF3ABFB4211F6EB8007594E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3ABFAE211F6EB8007594E7 /* SwiftyGif.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA29E9321CA9340E00E579D5;
+			remoteInfo = SwiftyGifExample;
+		};
+		EF3ABFB6211F6EB8007594E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3ABFAE211F6EB8007594E7 /* SwiftyGif.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA29E9461CA9340F00E579D5;
+			remoteInfo = SwiftyGifTests;
+		};
+		EF3ABFB8211F6EB8007594E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3ABFAE211F6EB8007594E7 /* SwiftyGif.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3B18BAF41E289899009C125A;
+			remoteInfo = SwiftyGif;
+		};
+		EF3ABFBD211F6EF1007594E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3ABFAE211F6EB8007594E7 /* SwiftyGif.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B18BAF31E289899009C125A;
+			remoteInfo = SwiftyGif;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -152,6 +183,7 @@
 				EF32AD6E20F4F80F004EEB34 /* ProjectXCore.framework in Embed Frameworks */,
 				EF3ABF58211DD511007594E7 /* SWXMLHash.framework in Embed Frameworks */,
 				EF32AD7620F4F86C004EEB34 /* Alamofire.framework in Embed Frameworks */,
+				EF3ABFBC211F6EF1007594E7 /* SwiftyGif.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +233,7 @@
 		EF3ABFA7211E2A80007594E7 /* XMLError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLError.swift; sourceTree = "<group>"; };
 		EF3ABFA9211E2AA2007594E7 /* JSONError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
 		EF3ABFAC211E2ACD007594E7 /* XMLResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLResult.swift; sourceTree = "<group>"; };
+		EF3ABFAE211F6EB8007594E7 /* SwiftyGif.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyGif.xcodeproj; path = Carthage/Checkouts/SwiftyGif/SwiftyGif.xcodeproj; sourceTree = "<group>"; };
 		EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EF8E1F0C20FD402700E6DCB9 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
@@ -232,6 +265,7 @@
 				EF32AD6D20F4F80F004EEB34 /* ProjectXCore.framework in Frameworks */,
 				EF3ABF57211DD511007594E7 /* SWXMLHash.framework in Frameworks */,
 				EF32AD7520F4F86C004EEB34 /* Alamofire.framework in Frameworks */,
+				EF3ABFBB211F6EF1007594E7 /* SwiftyGif.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF3ABFBA211F6EDE007594E7 /* SwiftyGif.framework in Frameworks */,
 				EF3ABF5B211DD52F007594E7 /* SWXMLHash.framework in Frameworks */,
 				EF32AD7320F4F851004EEB34 /* Alamofire.framework in Frameworks */,
 				EF32AD7420F4F851004EEB34 /* PromiseKit.framework in Frameworks */,
@@ -289,6 +324,7 @@
 		EF32AD5620F4F75E004EEB34 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF3ABFAE211F6EB8007594E7 /* SwiftyGif.xcodeproj */,
 				EF3ABF3F211DD4ED007594E7 /* SWXMLHash.xcodeproj */,
 				EF32AD5820F4F75E004EEB34 /* Alamofire.framework */,
 				EF32AD5720F4F75E004EEB34 /* PromiseKit.framework */,
@@ -482,6 +518,16 @@
 			path = Results;
 			sourceTree = "<group>";
 		};
+		EF3ABFAF211F6EB8007594E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF3ABFB5211F6EB8007594E7 /* SwiftyGifExample.app */,
+				EF3ABFB7211F6EB8007594E7 /* SwiftyGifTests.xctest */,
+				EF3ABFB9211F6EB8007594E7 /* SwiftyGif.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		EF8E1F0E20FD403E00E6DCB9 /* StateManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -599,6 +645,7 @@
 			dependencies = (
 				EF32AD6C20F4F80F004EEB34 /* PBXTargetDependency */,
 				EF3ABF5A211DD511007594E7 /* PBXTargetDependency */,
+				EF3ABFBE211F6EF1007594E7 /* PBXTargetDependency */,
 			);
 			name = ProjectX;
 			productName = ProjectX;
@@ -655,6 +702,10 @@
 			productRefGroup = EF32AD3E20F4F06C004EEB34 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = EF3ABFAF211F6EB8007594E7 /* Products */;
+					ProjectRef = EF3ABFAE211F6EB8007594E7 /* SwiftyGif.xcodeproj */;
+				},
 				{
 					ProductGroup = EF3ABF40211DD4ED007594E7 /* Products */;
 					ProjectRef = EF3ABF3F211DD4ED007594E7 /* SWXMLHash.xcodeproj */;
@@ -716,6 +767,27 @@
 			fileType = wrapper.framework;
 			path = SWXMLHash.framework;
 			remoteRef = EF3ABF55211DD4ED007594E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EF3ABFB5211F6EB8007594E7 /* SwiftyGifExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SwiftyGifExample.app;
+			remoteRef = EF3ABFB4211F6EB8007594E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EF3ABFB7211F6EB8007594E7 /* SwiftyGifTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftyGifTests.xctest;
+			remoteRef = EF3ABFB6211F6EB8007594E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EF3ABFB9211F6EB8007594E7 /* SwiftyGif.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyGif.framework;
+			remoteRef = EF3ABFB8211F6EB8007594E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -838,6 +910,11 @@
 			isa = PBXTargetDependency;
 			name = "SWXMLHash iOS";
 			targetProxy = EF3ABF59211DD511007594E7 /* PBXContainerItemProxy */;
+		};
+		EF3ABFBE211F6EF1007594E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyGif;
+			targetProxy = EF3ABFBD211F6EF1007594E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
