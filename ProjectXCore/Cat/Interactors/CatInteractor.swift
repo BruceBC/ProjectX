@@ -20,11 +20,11 @@ public class CatInteractor: CatService {
                 let result = XMLResult.success(cat)
                 completion(result)
             } else if let error = response.error {
-                let result = XMLResult<Cat>.error(error)
+                let result = XMLResult<Cat>.failure(error)
                 completion(result)
             } else {
                 let error = XMLError.empty("Could not get cat images. Uh-Oh!!!!")
-                let result = XMLResult<Cat>.error(error)
+                let result = XMLResult<Cat>.failure(error)
                 completion(result)
             }
         }
