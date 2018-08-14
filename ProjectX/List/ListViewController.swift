@@ -13,16 +13,15 @@ class ListViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
     
-    // MARK: - Properties
+    // MARK: - Public Properties
+    var controller = ListController()
+    
+    // MARK: - Overriden Properties
     override var prefersStatusBarHidden: Bool { return true }
-    var models: [ListViewModel] = []
-    var isFetching = false
-    var page       = 0
-    var total      = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.prefetchDataSource = self
+        setupController()
         loadModels()
     }
     
@@ -34,8 +33,12 @@ class ListViewController: UIViewController {
 
 // MARK: - Setup
 extension ListViewController {
+    private func setupController() {
+        controller.delegate = self
+    }
+    
     private func loadModels() {
-        fetchCats()
+        controller.fetchCats()
     }
 }
 
@@ -45,17 +48,16 @@ extension ListViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return models.count
-        return total
+        return controller.total
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listReuseidentifier, for: indexPath) as? ListCell else { return UICollectionViewCell() }
         
-        if isLoadingCell(for: indexPath) {
+        if controller.isLoadingCell(for: indexPath) {
             cell.setup(with: ListViewModel(image: #imageLiteral(resourceName: "trainGuy"), url: nil, isGif: false))
         } else {
-            let model = models[indexPath.row]
+            let model = controller.models[indexPath.row]
             cell.setup(with: model)
         }
         
@@ -75,122 +77,33 @@ extension ListViewController: UICollectionViewDataSource, UICollectionViewDelega
         return size
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let storyboard = UIStoryboard(name: "Video", bundle: nil)
-//        guard let vc = storyboard.instantiateViewController(withIdentifier: "VideoCoordinatorViewController") as? VideoCoordinatorViewController else { return }
-//        vc.video = thumbnails[indexPath.row]
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        if indexPaths.contains(where: isLoadingCell) {
-            fetchCats()
-            print("prefetching")
+        if indexPaths.contains(where: controller.isLoadingCell) {
+            controller.fetchCats()
         }
-        print("no need to prefetch")
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         collectionView.reloadData()
     }
-}
-
-// MARK: - Network Requests
-extension ListViewController {
-    private func fetchCats() {
-        guard !isFetching else { return }
-        isFetching = true
-        
-        CatInteractor.getImages { result in
-            switch result {
-            case .success(let cat):
-                self.onFetchCatSuccess(cat)
-            case .error(let error):
-                self.onFetchCatFailure(error)
-            }
-        }
-    }
-}
-
-// MARK: - Network Events
-extension ListViewController {
-    private func onFetchCatSuccess(_ cat: Cat) {
-        OperationQueue().addOperation {
-            let group = DispatchGroup()
-            
-            var models: [ListViewModel] = []
-            
-            cat.images.forEach {
-                group.enter()
-                let url = $0.url
-                $0.image { (image, isGif) in
-                    models.append(ListViewModel(image: image ?? #imageLiteral(resourceName: "trainGuy"), url: url, isGif: isGif))
-                    group.leave()
-                }
-            }
-            
-            group.wait()
-            
-            DispatchQueue.main.async {
-                self.didLoadViewModels(models)
-            }
-        }
-    }
-    
-    private func onFetchCatFailure(_ error: Error) {
-        DispatchQueue.main.async {
-            self.isFetching = false
-            print(error.localizedDescription)
-        }
-    }
-    
-    private func didLoadViewModels(_ models: [ListViewModel], completion: (() -> Void)? = nil) {
-        self.page += 1
-        self.total = 1000
-        self.isFetching = false
-        
-        self.models.append(contentsOf: models)
-        
-        if self.page > 1 {
-            // Subsequent page
-            let indexPathsToReload = self.calculateIndexPathsToReload(from: models)
-            self.onFetchCompleted(with: indexPathsToReload)
-        } else {
-            // First page
-            self.onFetchCompleted(with: .none)
-        }
-        
-        completion?()
-    }
-    
-    private func onFetchCompleted(with nexIndexPathsToReload: [IndexPath]?) {
-        guard let newIndexPathsToReload = nexIndexPathsToReload else {
-            self.collectionView.reloadData()
-            return
-        }
-        
-        let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
-        collectionView.reloadItems(at: indexPathsToReload)
-    }
-}
-
-// MARK: - Collection View Helpers
-extension ListViewController {
-    private func isLoadingCell(for indexPath: IndexPath) -> Bool {
-        return indexPath.row >= models.count
-    }
-    
-    private func calculateIndexPathsToReload(from newModels: [ListViewModel]) -> [IndexPath] {
-        let startIndex = models.count - newModels.count
-        let endIndex   = startIndex   + newModels.count
-        
-        return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
-    }
     
     private func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
         let indexPathsForVisibleRows = collectionView.indexPathsForVisibleItems
         let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
         return Array(indexPathsIntersection)
+    }
+}
+
+// MARK: HomeController Delegate
+extension ListViewController: ListControllerDelegate {
+    func onFetchCompleted(with indexPaths: [IndexPath]?) {
+        guard let indexPaths = indexPaths else {
+            collectionView.reloadData()
+            return
+        }
+        
+        let visibleIndexPaths = visibleIndexPathsToReload(intersecting: indexPaths)
+        collectionView.reloadItems(at: visibleIndexPaths)
     }
 }

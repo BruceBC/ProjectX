@@ -56,6 +56,9 @@
 		EF3ABFBA211F6EDE007594E7 /* SwiftyGif.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3ABFB9211F6EB8007594E7 /* SwiftyGif.framework */; };
 		EF3ABFBB211F6EF1007594E7 /* SwiftyGif.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3ABFB9211F6EB8007594E7 /* SwiftyGif.framework */; };
 		EF3ABFBC211F6EF1007594E7 /* SwiftyGif.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF3ABFB9211F6EB8007594E7 /* SwiftyGif.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EF3ABFF02122F846007594E7 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFEF2122F846007594E7 /* ListController.swift */; };
+		EF3ABFFA2123007D007594E7 /* ImageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFF92123007D007594E7 /* ImageResult.swift */; };
+		EF3ABFFC212300FC007594E7 /* ImageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFFB212300FC007594E7 /* ImageError.swift */; };
 		EF8E1F0B20FD2E0200E6DCB9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */; };
 		EF8E1F0D20FD402700E6DCB9 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0C20FD402700E6DCB9 /* StateManager.swift */; };
 		EFAE417F20F8EDBC00621B0B /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */; };
@@ -234,6 +237,9 @@
 		EF3ABFA9211E2AA2007594E7 /* JSONError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
 		EF3ABFAC211E2ACD007594E7 /* XMLResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLResult.swift; sourceTree = "<group>"; };
 		EF3ABFAE211F6EB8007594E7 /* SwiftyGif.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyGif.xcodeproj; path = Carthage/Checkouts/SwiftyGif/SwiftyGif.xcodeproj; sourceTree = "<group>"; };
+		EF3ABFEF2122F846007594E7 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
+		EF3ABFF92123007D007594E7 /* ImageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResult.swift; sourceTree = "<group>"; };
+		EF3ABFFB212300FC007594E7 /* ImageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageError.swift; sourceTree = "<group>"; };
 		EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EF8E1F0C20FD402700E6DCB9 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
@@ -421,6 +427,7 @@
 				EF3ABF28211C85C8007594E7 /* Cells */,
 				EF3ABF22211C83E5007594E7 /* List.storyboard */,
 				EF3ABF24211C83F6007594E7 /* ListViewController.swift */,
+				EF3ABFEF2122F846007594E7 /* ListController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -506,6 +513,7 @@
 			children = (
 				EF3ABFA7211E2A80007594E7 /* XMLError.swift */,
 				EF3ABFA9211E2AA2007594E7 /* JSONError.swift */,
+				EF3ABFFB212300FC007594E7 /* ImageError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -514,6 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				EF3ABFAC211E2ACD007594E7 /* XMLResult.swift */,
+				EF3ABFF92123007D007594E7 /* ImageResult.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -857,6 +866,7 @@
 				EF32AD4120F4F06C004EEB34 /* AppDelegate.swift in Sources */,
 				EF3ABF2B211C85DD007594E7 /* ListViewModel.swift in Sources */,
 				EF3ABF25211C83F6007594E7 /* ListViewController.swift in Sources */,
+				EF3ABFF02122F846007594E7 /* ListController.swift in Sources */,
 				EFDE580D20FFC3B100839E36 /* UIImage+Extensions.swift in Sources */,
 				EFAE418420F9122300621B0B /* UIImageView+Extensions.swift in Sources */,
 				EFAE41B020FCEE1B00621B0B /* String+Extensions.swift in Sources */,
@@ -875,6 +885,7 @@
 				EF32AD9720F51505004EEB34 /* UserGetterInteractor.swift in Sources */,
 				EF3ABF6B211DDAED007594E7 /* CatInteractor.swift in Sources */,
 				EF32AD8E20F51357004EEB34 /* Gender.swift in Sources */,
+				EF3ABFFC212300FC007594E7 /* ImageError.swift in Sources */,
 				EFDE581220FFCDD300839E36 /* TwitterTally.swift in Sources */,
 				EF3ABFAA211E2AA2007594E7 /* JSONError.swift in Sources */,
 				EF3ABF91211DF84C007594E7 /* CatImage.swift in Sources */,
@@ -894,6 +905,7 @@
 				EF32AD7C20F4FD0E004EEB34 /* ContentType.swift in Sources */,
 				EF32AD8220F4FEDF004EEB34 /* Routable.swift in Sources */,
 				EF32AD9020F5135E004EEB34 /* Address.swift in Sources */,
+				EF3ABFFA2123007D007594E7 /* ImageResult.swift in Sources */,
 				EF32AD9420F51494004EEB34 /* UserGetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
