@@ -59,6 +59,7 @@
 		EF3ABFF02122F846007594E7 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFEF2122F846007594E7 /* ListController.swift */; };
 		EF3ABFFA2123007D007594E7 /* ImageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFF92123007D007594E7 /* ImageResult.swift */; };
 		EF3ABFFC212300FC007594E7 /* ImageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFFB212300FC007594E7 /* ImageError.swift */; };
+		EF3ABFFF21230923007594E7 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFFE21230923007594E7 /* Aliases.swift */; };
 		EF8E1F0B20FD2E0200E6DCB9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */; };
 		EF8E1F0D20FD402700E6DCB9 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0C20FD402700E6DCB9 /* StateManager.swift */; };
 		EFAE417F20F8EDBC00621B0B /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */; };
@@ -240,6 +241,7 @@
 		EF3ABFEF2122F846007594E7 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		EF3ABFF92123007D007594E7 /* ImageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResult.swift; sourceTree = "<group>"; };
 		EF3ABFFB212300FC007594E7 /* ImageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageError.swift; sourceTree = "<group>"; };
+		EF3ABFFE21230923007594E7 /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
 		EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EF8E1F0C20FD402700E6DCB9 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 		EF3ABFA2211E2A25007594E7 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				EF3ABFFD21230914007594E7 /* Aliases */,
 				EF3ABFAB211E2AC0007594E7 /* Results */,
 				EF3ABFA6211E2A70007594E7 /* Errors */,
 				EF3ABFA3211E2A37007594E7 /* Helpers */,
@@ -535,6 +538,14 @@
 				EF3ABFB9211F6EB8007594E7 /* SwiftyGif.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EF3ABFFD21230914007594E7 /* Aliases */ = {
+			isa = PBXGroup;
+			children = (
+				EF3ABFFE21230923007594E7 /* Aliases.swift */,
+			);
+			path = Aliases;
 			sourceTree = "<group>";
 		};
 		EF8E1F0E20FD403E00E6DCB9 /* StateManagement */ = {
@@ -898,6 +909,7 @@
 				EF32AD9220F51364004EEB34 /* Picture.swift in Sources */,
 				EF3ABFA5211E2A47007594E7 /* ImageExtension.swift in Sources */,
 				EF32AD9A20F5160C004EEB34 /* Alamofire+Promise.swift in Sources */,
+				EF3ABFFF21230923007594E7 /* Aliases.swift in Sources */,
 				EF3ABF68211DD9F2007594E7 /* CatService.swift in Sources */,
 				EF3ABFAD211E2ACD007594E7 /* XMLResult.swift in Sources */,
 				EFDE580F20FFCD5D00839E36 /* Twitter.swift in Sources */,

@@ -9,9 +9,6 @@
 import UIKit
 import SwiftyGif
 
-public typealias ImageCompletion = (ImageResult) -> Void
-public typealias DataCompletion  = (Data)        -> Void
-
 enum ImageExtension {
     case standard(String)
     case gif(String)
