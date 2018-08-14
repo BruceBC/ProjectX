@@ -9,8 +9,8 @@
 import UIKit
 import SwiftyGif
 
-public typealias ImageCompletion = (UIImage?, _ isGif: Bool) -> Void
-public typealias DataCompletion  = (Data)     -> Void
+public typealias ImageCompletion = (ImageResult) -> Void
+public typealias DataCompletion  = (Data)        -> Void
 
 enum ImageExtension {
     case standard(String)
@@ -36,7 +36,12 @@ enum ImageExtension {
     private func stanardImage(_ url: String, completion: @escaping ImageCompletion) {
         loadImageUrlAsync(url) { data in
             DispatchQueue.main.async {
-                completion(UIImage(data: data), false)
+                guard let image = UIImage(data: data) else {
+                    completion(self.error("Image not found."))
+                    return
+                }
+                
+                completion(ImageResult.success(image, false))
             }
         }
     }
@@ -44,11 +49,13 @@ enum ImageExtension {
     private func gifImage(_ url: String, completion: @escaping ImageCompletion) {
         loadImageUrlAsync(url) { data in
             DispatchQueue.main.async {
-                completion(UIImage(gifData: data), true)
+                completion(ImageResult.success(UIImage(gifData: data), true))
             }
         }
     }
-    
+}
+
+extension ImageExtension {
     private func loadImageUrlAsync(_ url: String, completion: @escaping DataCompletion) {
         guard let imageUrl = URL(string: url) else { return }
         URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
@@ -57,6 +64,10 @@ enum ImageExtension {
                 return
             }
             completion(data)
-        }.resume()
+            }.resume()
+    }
+    
+    private func error(_ message: String) -> ImageResult {
+        return ImageResult.failure(ImageError.empty(message))
     }
 }
