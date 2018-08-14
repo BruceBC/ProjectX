@@ -10,5 +10,5 @@ import Foundation
 
 public enum XMLResult<T> {
     case success(T)
-    case error(Error)
+    case failure(Error)
 }
