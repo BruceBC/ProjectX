@@ -36,7 +36,7 @@ public struct CatImage: Codable {
         return CatImage(id: "", url: "", sourceUrl: "")
     }
     
-    public func image(completion: @escaping ImageCompletion) {
+    public func imageAsync(completion: @escaping ImageCompletion) {
         ImageExtension.get(url).image(completion)
     }
 }
