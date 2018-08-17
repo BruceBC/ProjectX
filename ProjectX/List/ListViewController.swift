@@ -8,6 +8,7 @@
 
 import UIKit
 import ProjectXCore
+import SwiftyGif
 
 class ListViewController: UIViewController {
     // MARK: - IBOutlets
@@ -51,8 +52,12 @@ extension ListViewController: UICollectionViewDataSource, UICollectionViewDelega
         return controller.total
     }
     
+    //https://github.com/kirualex/SwiftyGif/issues/75
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listReuseidentifier, for: indexPath) as? ListCell else { return UICollectionViewCell() }
+        cell.imageView.stopAnimatingGif()
+        SwiftyGifManager.defaultManager.deleteImageView(cell.imageView)
+        cell.imageView.image = nil
         
         if controller.isLoadingCell(for: indexPath) {
             cell.setup(with: ListViewModel(image: #imageLiteral(resourceName: "trainGuy"), url: nil, isGif: false))
