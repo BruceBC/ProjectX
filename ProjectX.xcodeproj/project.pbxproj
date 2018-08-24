@@ -62,6 +62,11 @@
 		EF3ABFFF21230923007594E7 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFFE21230923007594E7 /* Aliases.swift */; };
 		EF8E1F0B20FD2E0200E6DCB9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */; };
 		EF8E1F0D20FD402700E6DCB9 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0C20FD402700E6DCB9 /* StateManager.swift */; };
+		EF943CBC212F25E5005E8B9E /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF943CBB212F25E5005E8B9E /* PersonDetailViewController.swift */; };
+		EF943CC7212F2683005E8B9E /* DetailPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF943CC6212F2683005E8B9E /* DetailPresentAnimationController.swift */; };
+		EF943CCB212F3164005E8B9E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF943CCA212F3164005E8B9E /* PhotoCell.swift */; };
+		EF943CCD21305C9A005E8B9E /* PersonDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF943CCC21305C9A005E8B9E /* PersonDetail.xib */; };
+		EF943CCF21305DED005E8B9E /* PersonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF943CCE21305DED005E8B9E /* PersonDetail.swift */; };
 		EFAE417F20F8EDBC00621B0B /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */; };
 		EFAE418220F9097600621B0B /* Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418120F9097600621B0B /* Examples.swift */; };
 		EFAE418420F9122300621B0B /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418320F9122300621B0B /* UIImageView+Extensions.swift */; };
@@ -244,6 +249,11 @@
 		EF3ABFFE21230923007594E7 /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
 		EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EF8E1F0C20FD402700E6DCB9 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
+		EF943CBB212F25E5005E8B9E /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
+		EF943CC6212F2683005E8B9E /* DetailPresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresentAnimationController.swift; sourceTree = "<group>"; };
+		EF943CCA212F3164005E8B9E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		EF943CCC21305C9A005E8B9E /* PersonDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonDetail.xib; sourceTree = "<group>"; };
+		EF943CCE21305DED005E8B9E /* PersonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetail.swift; sourceTree = "<group>"; };
 		EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
 		EFAE418120F9097600621B0B /* Examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examples.swift; sourceTree = "<group>"; };
 		EFAE418320F9122300621B0B /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
@@ -313,6 +323,8 @@
 		EF32AD3F20F4F06C004EEB34 /* ProjectX */ = {
 			isa = PBXGroup;
 			children = (
+				EF943CC8212F313A005E8B9E /* Person */,
+				EF943CC5212F2642005E8B9E /* Transitions */,
 				EF3ABF21211C83B1007594E7 /* List */,
 				EFDE580720FFBB5800839E36 /* Launch */,
 				EFAE41A220F9502D00621B0B /* Carousel */,
@@ -554,6 +566,33 @@
 				EF8E1F0C20FD402700E6DCB9 /* StateManager.swift */,
 			);
 			path = StateManagement;
+			sourceTree = "<group>";
+		};
+		EF943CC5212F2642005E8B9E /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				EF943CC6212F2683005E8B9E /* DetailPresentAnimationController.swift */,
+				EF943CCC21305C9A005E8B9E /* PersonDetail.xib */,
+				EF943CCE21305DED005E8B9E /* PersonDetail.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		EF943CC8212F313A005E8B9E /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				EF943CC9212F3150005E8B9E /* Cells */,
+				EF943CBB212F25E5005E8B9E /* PersonDetailViewController.swift */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		EF943CC9212F3150005E8B9E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EF943CCA212F3164005E8B9E /* PhotoCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		EFAE417D20F8EDAB00621B0B /* Extensions */ = {
@@ -823,6 +862,7 @@
 				EF32AD4B20F4F06F004EEB34 /* Assets.xcassets in Resources */,
 				EF3ABF23211C83E6007594E7 /* List.storyboard in Resources */,
 				EF32AD4620F4F06C004EEB34 /* Main.storyboard in Resources */,
+				EF943CCD21305C9A005E8B9E /* PersonDetail.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,9 +909,11 @@
 				EF32ADA120F7D2C9004EEB34 /* CustomTabBar.swift in Sources */,
 				EF8E1F0D20FD402700E6DCB9 /* StateManager.swift in Sources */,
 				EFAE41AE20FCEDFB00621B0B /* UIView+Extensions.swift in Sources */,
+				EF943CC7212F2683005E8B9E /* DetailPresentAnimationController.swift in Sources */,
 				EFAE41A120F94E6B00621B0B /* ImageViewController.swift in Sources */,
 				EFAE418620F9156400621B0B /* UIButton+Extensions.swift in Sources */,
 				EFDE580B20FFBC7800839E36 /* Constants.swift in Sources */,
+				EF943CCF21305DED005E8B9E /* PersonDetail.swift in Sources */,
 				EFDE580920FFBB7200839E36 /* LaunchViewController.swift in Sources */,
 				EF32AD9D20F7A776004EEB34 /* HomeTabBarViewController.swift in Sources */,
 				EF32AD4120F4F06C004EEB34 /* AppDelegate.swift in Sources */,
@@ -883,8 +925,10 @@
 				EFAE41B020FCEE1B00621B0B /* String+Extensions.swift in Sources */,
 				EF8E1F0B20FD2E0200E6DCB9 /* ProfileViewModel.swift in Sources */,
 				EFAE419120F9401800621B0B /* XibView.swift in Sources */,
+				EF943CBC212F25E5005E8B9E /* PersonDetailViewController.swift in Sources */,
 				EF3ABF27211C8519007594E7 /* ListCell.swift in Sources */,
 				EF32AD4920F4F06C004EEB34 /* ProjectX.xcdatamodeld in Sources */,
+				EF943CCB212F3164005E8B9E /* PhotoCell.swift in Sources */,
 				EFAE41A420F9505600621B0B /* ImagePageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
