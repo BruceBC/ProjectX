@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+enum SegueIdentifiers {
+    static let personDetailViewController     = "PersonDetailViewController"
+    static let showPersonDetailViewController = "showPersonDetailViewController"
+}
