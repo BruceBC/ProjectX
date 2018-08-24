@@ -100,6 +100,10 @@ extension ViewController {
                                completion: completion)
             }
         }
+        
+        // Setup gesture recognizer
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapBottomView))
+        bottomView.addGestureRecognizer(gestureRecognizer)
     }
     
     func setupLabels(user: User?) {
@@ -282,6 +286,55 @@ extension ViewController {
         else { return }
         currentIndex = index
         getUserSuccess(user)
+    }
+}
+
+// MARK: - Gesture Actions
+extension ViewController {
+    @objc func didTapBottomView() {
+        performSegue(withIdentifier: SegueIdentifiers.showPersonDetailViewController, sender: self)
+    }
+}
+
+// MARK: Navigation
+extension ViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifiers.showPersonDetailViewController {
+            guard let vc = segue.destination as? PersonDetailViewController else { return }
+            vc.transitioningDelegate = self
+            vc.personDetailModel = personDetailModel
+        }
+    }
+}
+
+// MARK: Transition Delegate
+extension ViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        var frame = bottomView.frame
+        frame.origin.y = followerView.frame.origin.y
+        return DetailPresentAnimationController(bottomView.frame, model: personDetailModel)
+    }
+}
+
+// MARK: - Models
+extension ViewController {
+    var personDetailModel: PersonDetailViewModel {
+        guard
+            let name = nameLabel.text,
+            let state = locationLabel.text
+        else {
+            fatalError("Could not retrieve properties.")
+        }
+        // TODO: These images shouldn't be hardcoded, but should be gotten from ImagePageViewController somehow
+        let profileViewModel = [#imageLiteral(resourceName: "trainGuy"), #imageLiteral(resourceName: "sunglassesGirl"), #imageLiteral(resourceName: "cityBoy"), #imageLiteral(resourceName: "uncomfortableGirl")]
+            .map { ProfileViewModel(image: $0) }[currentIndex]
+        
+        return PersonDetailViewModel(
+            name: name,
+            state: state,
+            description: "Photographer at 'Le Monde', blogger and freelance journalist",
+            image: profileViewModel.image
+        )
     }
 }
 
