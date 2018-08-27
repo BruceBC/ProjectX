@@ -60,7 +60,7 @@ extension ListViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.imageView.image = nil
         
         if controller.isLoadingCell(for: indexPath) {
-            cell.setup(with: ListViewModel(image: #imageLiteral(resourceName: "trainGuy"), url: nil, isGif: false))
+            cell.setup(with: ListViewModel(image: #imageLiteral(resourceName: "placeholder"), url: nil, isGif: false))
         } else {
             let model = controller.models[indexPath.row]
             cell.setup(with: model)
