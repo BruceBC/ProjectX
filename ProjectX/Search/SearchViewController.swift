@@ -319,8 +319,7 @@ extension SearchViewController {
         if segue.identifier == SegueIdentifiers.showSearchDetailViewController {
             guard let vc = segue.destination as? SearchDetailViewController else { return }
             vc.transitioningDelegate = self // modal
-//            vc.navigationController?.transitioningDelegate = self // push/pop
-            vc.personDetailModel = personDetailModel
+            vc.model = searchDetailPresentTransitionModel
         }
     }
 }
@@ -330,7 +329,7 @@ extension SearchViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         var frame = bottomView.frame
         frame.origin.y = followerView.frame.origin.y
-        return SearchDetailPresentAnimationController(bottomView.frame, model: personDetailModel)
+        return SearchDetailPresentAnimationController(bottomView.frame, model: searchDetailPresentTransitionModel)
     }
 }
 
@@ -345,7 +344,7 @@ extension SearchViewController: UINavigationControllerDelegate {
             if toVC is SearchDetailViewController {
                 var frame = bottomView.frame
                 frame.origin.y = followerView.frame.origin.y
-                return SearchDetailPresentAnimationController(bottomView.frame, model: personDetailModel)
+                return SearchDetailPresentAnimationController(bottomView.frame, model: searchDetailPresentTransitionModel)
             }
             return nil
         case .pop:
@@ -359,7 +358,7 @@ extension SearchViewController: UINavigationControllerDelegate {
 
 // MARK: - Models
 extension SearchViewController {
-    var personDetailModel: SearchDetailPresentTransitionViewModel {
+    var searchDetailPresentTransitionModel: SearchDetailPresentTransitionViewModel {
         guard
             let name = nameLabel.text,
             let state = locationLabel.text

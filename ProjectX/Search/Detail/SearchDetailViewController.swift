@@ -23,7 +23,7 @@ class SearchDetailViewController: UIViewController {
     override var prefersStatusBarHidden: Bool { return true }
     
     // MARK: Properties
-    var personDetailModel: SearchDetailPresentTransitionViewModel?
+    var model: SearchDetailPresentTransitionViewModel?
     var defaultFollowButtonWidth  = CGFloat(167.5)
     var defaultFollowButtonHeight = CGFloat(45)
 
@@ -70,7 +70,7 @@ extension SearchDetailViewController {
     }
     
     private func setupPersonDetailModel() {
-        guard let model = personDetailModel else { return }
+        guard let model = model else { return }
         nameLabel.text        = model.name
         stateLabel.text       = model.state
         descriptionLabel.text = model.description
