@@ -344,6 +344,9 @@
                                                                 <state key="normal" title="FOLLOW">
                                                                     <color key="titleColor" red="0.83921568629999999" green="0.18823529410000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="followAction:" destination="eip-yb-MNy" eventType="touchUpInside" id="INi-1B-FfD"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -448,6 +451,8 @@
                         <outlet property="bottomView" destination="kot-xa-8dI" id="UCk-xM-jJq"/>
                         <outlet property="descriptionLabel" destination="JE1-h7-xi7" id="qcp-JJ-HJ3"/>
                         <outlet property="followButton" destination="NaC-xe-5BB" id="uuv-8S-j3U"/>
+                        <outlet property="followButtonHeightConstraint" destination="QoX-lp-gVD" id="q9d-qs-oXi"/>
+                        <outlet property="followButtonWidthConstraint" destination="hnd-CA-jbS" id="CDs-Zg-mUa"/>
                         <outlet property="followerCountLabel" destination="HRw-1p-qDg" id="5C0-cH-Gep"/>
                         <outlet property="followerLabel" destination="5GF-aE-blO" id="vc0-R8-0KN"/>
                         <outlet property="followerView" destination="laA-eN-n9F" id="3eS-Au-x6i"/>

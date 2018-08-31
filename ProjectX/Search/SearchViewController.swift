@@ -63,8 +63,8 @@ class SearchViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func followAction(_ sender: Any) {
-        let user = StateManager.shared.users[currentIndex]
-        let isFollowing = !user.twitter.isFollowing
+        let user                                                    = StateManager.shared.users[currentIndex]
+        let isFollowing                                             = !user.twitter.isFollowing
         StateManager.shared.users[currentIndex].twitter.isFollowing = isFollowing
         
         if isFollowing {
@@ -317,9 +317,10 @@ extension SearchViewController {
 extension SearchViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifiers.showSearchDetailViewController {
-            guard let vc = segue.destination as? SearchDetailViewController else { return }
+            guard let vc             = segue.destination as? SearchDetailViewController else { return }
             vc.transitioningDelegate = self // modal
-            vc.model = searchDetailPresentTransitionModel
+            vc.model                 = searchDetailPresentTransitionModel
+            vc.index                 = currentIndex
         }
     }
 }
@@ -329,7 +330,7 @@ extension SearchViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         var frame = bottomView.frame
         frame.origin.y = followerView.frame.origin.y
-        return SearchDetailPresentAnimationController(bottomView.frame, model: searchDetailPresentTransitionModel)
+        return SearchDetailPresentAnimationController(bottomView.frame, model: searchDetailPresentTransitionModel, index: currentIndex)
     }
 }
 
@@ -344,7 +345,7 @@ extension SearchViewController: UINavigationControllerDelegate {
             if toVC is SearchDetailViewController {
                 var frame = bottomView.frame
                 frame.origin.y = followerView.frame.origin.y
-                return SearchDetailPresentAnimationController(bottomView.frame, model: searchDetailPresentTransitionModel)
+                return SearchDetailPresentAnimationController(bottomView.frame, model: searchDetailPresentTransitionModel, index: currentIndex)
             }
             return nil
         case .pop:

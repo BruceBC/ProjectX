@@ -10,31 +10,33 @@ import UIKit
 
 class SearchDetailPresentTransitionView: UIView {
     // MARK: - IBOutlets
-    @IBOutlet weak var followButton:          UIButton!
-    @IBOutlet weak var followerView:          UIView!
-    @IBOutlet weak var bottomView:            UIView!
-    @IBOutlet weak var nameLabel:             UILabel!
-    @IBOutlet weak var stateLabel:            UILabel!
-    @IBOutlet weak var descriptionLabel:      UILabel!
-    @IBOutlet weak var followerLabel:         UILabel!
-    @IBOutlet weak var followerCountLabel:    UILabel!
-    @IBOutlet weak var postsLabel:            UILabel!
-    @IBOutlet weak var postsCountLabel:       UILabel!
-    @IBOutlet weak var followingLabel:        UILabel!
-    @IBOutlet weak var followingCountLabel:   UILabel!
-    @IBOutlet weak var placeholder1ImageView: UIImageView!
-    @IBOutlet weak var placeholder2ImageView: UIImageView!
-    @IBOutlet weak var placeholder3ImageView: UIImageView!
-    @IBOutlet weak var placeholder4ImageView: UIImageView!
+    @IBOutlet weak var followButton:                 UIButton!
+    @IBOutlet weak var followerView:                 UIView!
+    @IBOutlet weak var bottomView:                   UIView!
+    @IBOutlet weak var nameLabel:                    UILabel!
+    @IBOutlet weak var stateLabel:                   UILabel!
+    @IBOutlet weak var descriptionLabel:             UILabel!
+    @IBOutlet weak var followerLabel:                UILabel!
+    @IBOutlet weak var followerCountLabel:           UILabel!
+    @IBOutlet weak var postsLabel:                   UILabel!
+    @IBOutlet weak var postsCountLabel:              UILabel!
+    @IBOutlet weak var followingLabel:               UILabel!
+    @IBOutlet weak var followingCountLabel:          UILabel!
+    @IBOutlet weak var placeholder1ImageView:        UIImageView!
+    @IBOutlet weak var placeholder2ImageView:        UIImageView!
+    @IBOutlet weak var placeholder3ImageView:        UIImageView!
+    @IBOutlet weak var placeholder4ImageView:        UIImageView!
+    @IBOutlet weak var followButtonWidthConstraint:  NSLayoutConstraint!
+    @IBOutlet weak var followButtonHeightConstraint: NSLayoutConstraint!
     
     // MARK: Properties
-    var defaultFollowButtonWidth = CGFloat(167.5)
+    var index: Int?
+    var defaultFollowButtonWidth  = CGFloat(167.5)
     var defaultFollowButtonHeight = CGFloat(45)
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupBottomView()
-        setupButtons()
         setupLabels()
         setupFollowerView()
         setupImageViews()
@@ -49,10 +51,14 @@ extension SearchDetailPresentTransitionView {
     }
     
     private func setupButtons() {
-        followButton.layer.masksToBounds = true
-        followButton.layer.borderWidth   = 2
-        followButton.layer.borderColor   = followButton.titleColor(for: .normal)?.cgColor
-        followButton.layer.cornerRadius  = defaultFollowButtonHeight / 2
+        guard let index = self.index else { return }
+        let user = StateManager.shared.users[index]
+        
+        if user.twitter.isFollowing {
+            self.isFollowingButton()
+        } else {
+            self.isNotFollowingButton()
+        }
     }
     
     private func setupLabels() {
@@ -75,7 +81,7 @@ extension SearchDetailPresentTransitionView {
         placeholder4ImageView.layer.masksToBounds = true
     }
     
-    func setup(with model: SearchDetailPresentTransitionViewModel) {
+    public func setup(with model: SearchDetailPresentTransitionViewModel, index: Int) {
         nameLabel.text           = model.name
         stateLabel.text          = model.location
         descriptionLabel.text    = model.description
@@ -85,18 +91,21 @@ extension SearchDetailPresentTransitionView {
         postsCountLabel.text     = model.postCount
         followingLabel.text      = model.followingTitle
         followingCountLabel.text = model.followingCount
+        
+        self.index = index
+        setupButtons()
     }
 }
 
 // MARK: - Animation
 extension SearchDetailPresentTransitionView {
-    func showDescription(duration: TimeInterval) {
+    public func showDescription(duration: TimeInterval) {
         UIView.animate(withDuration: duration) {
             self.descriptionLabel.alpha = 1
         }
     }
     
-    func hideDescription(duration: TimeInterval) {
+    public func hideDescription(duration: TimeInterval) {
         UIView.animate(withDuration: duration) {
             self.descriptionLabel.alpha = 0
         }
@@ -105,8 +114,41 @@ extension SearchDetailPresentTransitionView {
 
 // MARK: - Helpers
 extension SearchDetailPresentTransitionView {
-    static func getFromNib() -> SearchDetailPresentTransitionView? {
+    public static func getFromNib() -> SearchDetailPresentTransitionView? {
         guard let searchDetailPresentTransitionView = UINib.init(nibName: "SearchDetailPresentTransitionView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? SearchDetailPresentTransitionView else { return nil }
         return searchDetailPresentTransitionView
+    }
+    
+    private func isFollowingButton() {
+        let width = CGFloat(35)
+        followButton.setTitle(nil, for: .normal)
+        followButton.backgroundColor = .red
+        followButton.setTitleColor(.red, for: .normal)
+        followButton.layer.borderColor = UIColor.red.cgColor
+        followButton.layer.cornerRadius = width / 2
+        followButtonHeightConstraint.constant = width
+        followButtonWidthConstraint.constant = width
+        followButton.setImage(#imageLiteral(resourceName: "person"), for: .normal)
+        followButton.setImageColor(.white)
+        followButton.imageView?.alpha = 1
+        followButton.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5)
+        self.layoutIfNeeded()
+    }
+    
+    private func isNotFollowingButton() {
+        let width = defaultFollowButtonWidth
+        let height = defaultFollowButtonHeight
+        let red = #colorLiteral(red: 0.8392156863, green: 0.1882352941, blue: 0.1921568627, alpha: 1)
+        followButton.setTitle("FOLLOW", for: .normal)
+        followButton.setTitleColor(red, for: .normal)
+        followButton.setImage(nil, for: .normal)
+        followButton.backgroundColor = .clear
+        followButton.layer.masksToBounds = true
+        followButton.layer.borderWidth = 2
+        followButton.layer.borderColor = red.cgColor
+        followButton.layer.cornerRadius = height / 2
+        followButtonHeightConstraint.constant = height
+        followButtonWidthConstraint.constant = width
+        self.layoutIfNeeded()
     }
 }

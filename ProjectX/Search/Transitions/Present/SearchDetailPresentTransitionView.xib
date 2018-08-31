@@ -260,6 +260,8 @@
                 <outlet property="bottomView" destination="r2O-vj-J51" id="HSE-fc-c6U"/>
                 <outlet property="descriptionLabel" destination="3Yk-aT-j7m" id="s1Q-ag-Tta"/>
                 <outlet property="followButton" destination="mHv-fB-7CH" id="jWt-sI-SRg"/>
+                <outlet property="followButtonHeightConstraint" destination="LKM-by-gju" id="rtl-D4-bWf"/>
+                <outlet property="followButtonWidthConstraint" destination="CLU-eZ-Y9H" id="a5e-fX-NlN"/>
                 <outlet property="followerCountLabel" destination="ODq-Q0-PVZ" id="c2F-Aq-Oe8"/>
                 <outlet property="followerLabel" destination="OAj-hl-M4Z" id="wHh-Yu-Crq"/>
                 <outlet property="followerView" destination="AdD-Ta-5nz" id="XXl-jV-YF3"/>

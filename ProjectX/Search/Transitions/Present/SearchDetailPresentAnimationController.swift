@@ -12,10 +12,12 @@ class SearchDetailPresentAnimationController: NSObject, UIViewControllerAnimated
     // MARK: - Properties
     let originalFrame: CGRect
     let model:         SearchDetailPresentTransitionViewModel
+    let index:         Int
     
-    init(_ originalFrame: CGRect, model: SearchDetailPresentTransitionViewModel) {
+    init(_ originalFrame: CGRect, model: SearchDetailPresentTransitionViewModel, index: Int) {
         self.originalFrame = originalFrame
         self.model = model
+        self.index = index
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -27,7 +29,7 @@ class SearchDetailPresentAnimationController: NSObject, UIViewControllerAnimated
             let fromVC           = transitionContext.viewController(forKey: .from),
             let toVC             = transitionContext.viewController(forKey: .to),
             let snapshot         = toVC.view.snapshotView(afterScreenUpdates: true),
-            let personDetailView = SearchDetailPresentTransitionView.getFromNib()
+            let searchDetailView = SearchDetailPresentTransitionView.getFromNib()
         else {
             return
         }
@@ -38,20 +40,20 @@ class SearchDetailPresentAnimationController: NSObject, UIViewControllerAnimated
         
         containerView.addSubview(toVC.view)
         containerView.addSubview(snapshot)
-        containerView.addSubview(personDetailView)
+        containerView.addSubview(searchDetailView)
         toVC.view.isHidden = true
         
         snapshot.alpha = 0
-        personDetailView.translatesAutoresizingMaskIntoConstraints = false
+        searchDetailView.translatesAutoresizingMaskIntoConstraints = false
         
         // Setup
-        setupPersonDetailView(personDetailView)
+        setupSearchDetailView(searchDetailView, index: index)
         
-        let bottomConstraint = NSLayoutConstraint(item: personDetailView, attribute: .bottom,   relatedBy: .equal, toItem: containerView.safeAreaLayoutGuide, attribute: .bottom,   multiplier: 1, constant: height - originalFrame.height - 80)
+        let bottomConstraint = NSLayoutConstraint(item: searchDetailView, attribute: .bottom,   relatedBy: .equal, toItem: containerView.safeAreaLayoutGuide, attribute: .bottom,   multiplier: 1, constant: height - originalFrame.height - 80)
         NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: personDetailView, attribute: .height,  relatedBy: .equal, toItem: nil, attribute: .height,  multiplier: 1, constant: height),
-            NSLayoutConstraint(item: personDetailView, attribute: .leading,  relatedBy: .equal, toItem: containerView, attribute: .leading,  multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: personDetailView, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: searchDetailView, attribute: .height,  relatedBy: .equal, toItem: nil, attribute: .height,  multiplier: 1, constant: height),
+            NSLayoutConstraint(item: searchDetailView, attribute: .leading,  relatedBy: .equal, toItem: containerView, attribute: .leading,  multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: searchDetailView, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1, constant: 0),
             bottomConstraint
         ])
         
@@ -65,20 +67,20 @@ class SearchDetailPresentAnimationController: NSObject, UIViewControllerAnimated
         let completion = { (_:Bool) in
             toVC.view.isHidden = false
             snapshot.removeFromSuperview()
-            personDetailView.removeFromSuperview()
+            searchDetailView.removeFromSuperview()
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
         
         // Animatate
         let duration: TimeInterval = 0.6
-        personDetailView.showDescription(duration: duration)
+        searchDetailView.showDescription(duration: duration)
         UIView.animate(withDuration: duration, animations: animation, completion: completion)
     }
 }
 
 // MARK: - Setup
 extension SearchDetailPresentAnimationController {
-    private func setupPersonDetailView(_ view: SearchDetailPresentTransitionView) {
-        view.setup(with: model)
+    private func setupSearchDetailView(_ view: SearchDetailPresentTransitionView, index: Int) {
+        view.setup(with: model, index: index)
     }
 }
