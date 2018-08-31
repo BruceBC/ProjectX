@@ -88,6 +88,7 @@
 		EFB2029A213991B900CFD3F1 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB20299213991B900CFD3F1 /* NotificationViewController.swift */; };
 		EFB2029C213991DF00CFD3F1 /* CloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB2029B213991DF00CFD3F1 /* CloudViewController.swift */; };
 		EFB202AB21399E3500CFD3F1 /* SearchDetailPresentTransitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB202AA21399E3500CFD3F1 /* SearchDetailPresentTransitionViewModel.swift */; };
+		EFB202AE2139BD6B00CFD3F1 /* SearchDetailDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB202AD2139BD6B00CFD3F1 /* SearchDetailDismissAnimationController.swift */; };
 		EFDE580620FFB95900839E36 /* Notification.Name+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580520FFB95900839E36 /* Notification.Name+Extensions.swift */; };
 		EFDE580920FFBB7200839E36 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580820FFBB7200839E36 /* LaunchViewController.swift */; };
 		EFDE580B20FFBC7800839E36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580A20FFBC7800839E36 /* Constants.swift */; };
@@ -284,6 +285,7 @@
 		EFB20299213991B900CFD3F1 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		EFB2029B213991DF00CFD3F1 /* CloudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudViewController.swift; sourceTree = "<group>"; };
 		EFB202AA21399E3500CFD3F1 /* SearchDetailPresentTransitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailPresentTransitionViewModel.swift; sourceTree = "<group>"; };
+		EFB202AD2139BD6B00CFD3F1 /* SearchDetailDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailDismissAnimationController.swift; sourceTree = "<group>"; };
 		EFDE580520FFB95900839E36 /* Notification.Name+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extensions.swift"; sourceTree = "<group>"; };
 		EFDE580820FFBB7200839E36 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		EFDE580A20FFBC7800839E36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -587,6 +589,7 @@
 		EF943CC5212F2642005E8B9E /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				EFB202AC2139BD4700CFD3F1 /* Dismiss */,
 				EFB2028F21398D1200CFD3F1 /* Present */,
 			);
 			path = Transitions;
@@ -731,6 +734,14 @@
 				EFB202AA21399E3500CFD3F1 /* SearchDetailPresentTransitionViewModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EFB202AC2139BD4700CFD3F1 /* Dismiss */ = {
+			isa = PBXGroup;
+			children = (
+				EFB202AD2139BD6B00CFD3F1 /* SearchDetailDismissAnimationController.swift */,
+			);
+			path = Dismiss;
 			sourceTree = "<group>";
 		};
 		EFDE580720FFBB5800839E36 /* Launch */ = {
@@ -1003,6 +1014,7 @@
 				EF3ABF2B211C85DD007594E7 /* ListViewModel.swift in Sources */,
 				EF3ABF25211C83F6007594E7 /* ListViewController.swift in Sources */,
 				EF3ABFF02122F846007594E7 /* ListController.swift in Sources */,
+				EFB202AE2139BD6B00CFD3F1 /* SearchDetailDismissAnimationController.swift in Sources */,
 				EFDE580D20FFC3B100839E36 /* UIImage+Extensions.swift in Sources */,
 				EFAE418420F9122300621B0B /* UIImageView+Extensions.swift in Sources */,
 				EFAE41B020FCEE1B00621B0B /* String+Extensions.swift in Sources */,
