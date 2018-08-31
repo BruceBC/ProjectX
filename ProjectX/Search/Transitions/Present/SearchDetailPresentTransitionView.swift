@@ -8,20 +8,6 @@
 
 import UIKit
 
-struct SearchDetailPresentTransitionViewModel {
-    let name:        String
-    let state:       String
-    let description: String
-    let image:       UIImage
-    
-    init(name: String, state: String, description: String, image: UIImage) {
-        self.name        = name
-        self.state       = state
-        self.description = description
-        self.image       = image
-    }
-}
-
 class SearchDetailPresentTransitionView: UIView {
     // MARK: - IBOutlets
     @IBOutlet weak var followButton:          UIButton!
@@ -85,7 +71,7 @@ extension SearchDetailPresentTransitionView {
     
     func setup(with model: SearchDetailPresentTransitionViewModel) {
         nameLabel.text        = model.name
-        stateLabel.text       = model.state
+        stateLabel.text       = model.location
         descriptionLabel.text = model.description
     }
 }

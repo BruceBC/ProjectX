@@ -360,8 +360,8 @@ extension SearchViewController: UINavigationControllerDelegate {
 extension SearchViewController {
     var searchDetailPresentTransitionModel: SearchDetailPresentTransitionViewModel {
         guard
-            let name = nameLabel.text,
-            let state = locationLabel.text
+            let name     = nameLabel.text,
+            let location = locationLabel.text
         else {
             fatalError("Could not retrieve properties.")
         }
@@ -371,7 +371,7 @@ extension SearchViewController {
         
         return SearchDetailPresentTransitionViewModel(
             name: name,
-            state: state,
+            location: location,
             description: "Photographer at 'Le Monde', blogger and freelance journalist",
             image: profileViewModel.image
         )

@@ -72,7 +72,7 @@ extension SearchDetailViewController {
     private func setupPersonDetailModel() {
         guard let model = model else { return }
         nameLabel.text        = model.name
-        stateLabel.text       = model.state
+        stateLabel.text       = model.location
         descriptionLabel.text = model.description
         imageView.image       = model.image
     }
