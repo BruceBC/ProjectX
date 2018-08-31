@@ -10,14 +10,19 @@ import UIKit
 
 class SearchDetailViewController: UIViewController {
     // MARK: - IBOutlets
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var imageView:      UIImageView!
-    @IBOutlet weak var followerView:   UIView!
-    @IBOutlet weak var bottomView:     UIView!
-    @IBOutlet weak var followButton:   UIButton!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var stateLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var followerView:        UIView!
+    @IBOutlet weak var bottomView:          UIView!
+    @IBOutlet weak var followButton:        UIButton!
+    @IBOutlet weak var nameLabel:           UILabel!
+    @IBOutlet weak var stateLabel:          UILabel!
+    @IBOutlet weak var descriptionLabel:    UILabel!
+    @IBOutlet weak var followerLabel:       UILabel!
+    @IBOutlet weak var followerCountLabel:  UILabel!
+    @IBOutlet weak var postsLabel:          UILabel!
+    @IBOutlet weak var postsCountLabel:     UILabel!
+    @IBOutlet weak var followingLabel:      UILabel!
+    @IBOutlet weak var followingCountLabel: UILabel!
+    @IBOutlet weak var imageView:           UIImageView!
     
     // MARK: - Computed Properties
     override var prefersStatusBarHidden: Bool { return true }
@@ -33,7 +38,7 @@ class SearchDetailViewController: UIViewController {
         setupFollowerView()
         setupBottomView()
         setupButtons()
-        setupPersonDetailModel()
+        setupLabels()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,12 +74,18 @@ extension SearchDetailViewController {
         followButton.layer.cornerRadius = defaultFollowButtonHeight / 2
     }
     
-    private func setupPersonDetailModel() {
+    private func setupLabels() {
         guard let model = model else { return }
-        nameLabel.text        = model.name
-        stateLabel.text       = model.location
-        descriptionLabel.text = model.description
-        imageView.image       = model.image
+        nameLabel.text           = model.name
+        stateLabel.text          = model.location
+        descriptionLabel.text    = model.description
+        followerLabel.text       = model.followerTitle
+        followerCountLabel.text  = model.followerCount
+        postsLabel.text          = model.postTitle
+        postsCountLabel.text     = model.postCount
+        followingLabel.text      = model.followingTitle
+        followingCountLabel.text = model.followingCount
+        imageView.image          = model.image
     }
 }
 

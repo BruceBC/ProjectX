@@ -260,12 +260,18 @@
                 <outlet property="bottomView" destination="r2O-vj-J51" id="HSE-fc-c6U"/>
                 <outlet property="descriptionLabel" destination="3Yk-aT-j7m" id="s1Q-ag-Tta"/>
                 <outlet property="followButton" destination="mHv-fB-7CH" id="jWt-sI-SRg"/>
+                <outlet property="followerCountLabel" destination="ODq-Q0-PVZ" id="c2F-Aq-Oe8"/>
+                <outlet property="followerLabel" destination="OAj-hl-M4Z" id="wHh-Yu-Crq"/>
                 <outlet property="followerView" destination="AdD-Ta-5nz" id="XXl-jV-YF3"/>
+                <outlet property="followingCountLabel" destination="5lq-Ix-rzO" id="lF9-hj-8mr"/>
+                <outlet property="followingLabel" destination="vEz-dj-xGp" id="vfz-PR-s8X"/>
                 <outlet property="nameLabel" destination="n4S-9L-fwG" id="r5E-iJ-San"/>
                 <outlet property="placeholder1ImageView" destination="yfR-cc-Sef" id="Iph-5s-7ld"/>
                 <outlet property="placeholder2ImageView" destination="gNv-V9-MkL" id="l0D-Ax-Uy3"/>
                 <outlet property="placeholder3ImageView" destination="tJk-BW-ZWy" id="fhY-vu-VFf"/>
                 <outlet property="placeholder4ImageView" destination="FbF-rY-JjC" id="oeS-Px-UlF"/>
+                <outlet property="postsCountLabel" destination="Y3V-tf-7jp" id="Zcv-6r-Wid"/>
+                <outlet property="postsLabel" destination="1et-5h-IWz" id="8bD-Bv-g5h"/>
                 <outlet property="stateLabel" destination="HI5-so-gU6" id="90j-Bp-gvs"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="53.5"/>

@@ -448,9 +448,15 @@
                         <outlet property="bottomView" destination="kot-xa-8dI" id="UCk-xM-jJq"/>
                         <outlet property="descriptionLabel" destination="JE1-h7-xi7" id="qcp-JJ-HJ3"/>
                         <outlet property="followButton" destination="NaC-xe-5BB" id="uuv-8S-j3U"/>
+                        <outlet property="followerCountLabel" destination="HRw-1p-qDg" id="5C0-cH-Gep"/>
+                        <outlet property="followerLabel" destination="5GF-aE-blO" id="vc0-R8-0KN"/>
                         <outlet property="followerView" destination="laA-eN-n9F" id="3eS-Au-x6i"/>
+                        <outlet property="followingCountLabel" destination="vhQ-9r-ThT" id="0EH-9R-scQ"/>
+                        <outlet property="followingLabel" destination="2zS-gs-OrI" id="LfA-Ii-IsT"/>
                         <outlet property="imageView" destination="xWx-ct-iAU" id="T1B-5d-iZI"/>
                         <outlet property="nameLabel" destination="Bpb-rf-BeO" id="dTf-Wc-Yuo"/>
+                        <outlet property="postsCountLabel" destination="GO7-TW-pUP" id="b2G-8W-qnQ"/>
+                        <outlet property="postsLabel" destination="VIi-gQ-tYG" id="gx1-H4-KdL"/>
                         <outlet property="stateLabel" destination="zBF-cH-fvd" id="YU3-fZ-bdt"/>
                     </connections>
                 </viewController>

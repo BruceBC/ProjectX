@@ -11,11 +11,17 @@ import UIKit
 class SearchDetailPresentTransitionView: UIView {
     // MARK: - IBOutlets
     @IBOutlet weak var followButton:          UIButton!
+    @IBOutlet weak var followerView:          UIView!
+    @IBOutlet weak var bottomView:            UIView!
     @IBOutlet weak var nameLabel:             UILabel!
     @IBOutlet weak var stateLabel:            UILabel!
     @IBOutlet weak var descriptionLabel:      UILabel!
-    @IBOutlet weak var followerView:          UIView!
-    @IBOutlet weak var bottomView:            UIView!
+    @IBOutlet weak var followerLabel:         UILabel!
+    @IBOutlet weak var followerCountLabel:    UILabel!
+    @IBOutlet weak var postsLabel:            UILabel!
+    @IBOutlet weak var postsCountLabel:       UILabel!
+    @IBOutlet weak var followingLabel:        UILabel!
+    @IBOutlet weak var followingCountLabel:   UILabel!
     @IBOutlet weak var placeholder1ImageView: UIImageView!
     @IBOutlet weak var placeholder2ImageView: UIImageView!
     @IBOutlet weak var placeholder3ImageView: UIImageView!
@@ -70,9 +76,15 @@ extension SearchDetailPresentTransitionView {
     }
     
     func setup(with model: SearchDetailPresentTransitionViewModel) {
-        nameLabel.text        = model.name
-        stateLabel.text       = model.location
-        descriptionLabel.text = model.description
+        nameLabel.text           = model.name
+        stateLabel.text          = model.location
+        descriptionLabel.text    = model.description
+        followerLabel.text       = model.followerTitle
+        followerCountLabel.text  = model.followerCount
+        postsLabel.text          = model.postTitle
+        postsCountLabel.text     = model.postCount
+        followingLabel.text      = model.followingTitle
+        followingCountLabel.text = model.followingCount
     }
 }
 
