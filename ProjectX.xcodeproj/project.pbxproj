@@ -79,6 +79,7 @@
 		EFAE41A420F9505600621B0B /* ImagePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE41A320F9505600621B0B /* ImagePageViewController.swift */; };
 		EFAE41AE20FCEDFB00621B0B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE41AD20FCEDFB00621B0B /* UIView+Extensions.swift */; };
 		EFAE41B020FCEE1B00621B0B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE41AF20FCEE1B00621B0B /* String+Extensions.swift */; };
+		EFB201F721347F2D00CFD3F1 /* PersonPhotosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB201F621347F2D00CFD3F1 /* PersonPhotosListViewController.swift */; };
 		EFDE580620FFB95900839E36 /* Notification.Name+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580520FFB95900839E36 /* Notification.Name+Extensions.swift */; };
 		EFDE580920FFBB7200839E36 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580820FFBB7200839E36 /* LaunchViewController.swift */; };
 		EFDE580B20FFBC7800839E36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580A20FFBC7800839E36 /* Constants.swift */; };
@@ -266,6 +267,7 @@
 		EFAE41A320F9505600621B0B /* ImagePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePageViewController.swift; sourceTree = "<group>"; };
 		EFAE41AD20FCEDFB00621B0B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		EFAE41AF20FCEE1B00621B0B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		EFB201F621347F2D00CFD3F1 /* PersonPhotosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPhotosListViewController.swift; sourceTree = "<group>"; };
 		EFDE580520FFB95900839E36 /* Notification.Name+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extensions.swift"; sourceTree = "<group>"; };
 		EFDE580820FFBB7200839E36 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		EFDE580A20FFBC7800839E36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -583,6 +585,7 @@
 			children = (
 				EF943CC9212F3150005E8B9E /* Cells */,
 				EF943CBB212F25E5005E8B9E /* PersonDetailViewController.swift */,
+				EFB201F621347F2D00CFD3F1 /* PersonPhotosListViewController.swift */,
 			);
 			path = Person;
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				EFAE41B020FCEE1B00621B0B /* String+Extensions.swift in Sources */,
 				EF8E1F0B20FD2E0200E6DCB9 /* ProfileViewModel.swift in Sources */,
 				EFAE419120F9401800621B0B /* XibView.swift in Sources */,
+				EFB201F721347F2D00CFD3F1 /* PersonPhotosListViewController.swift in Sources */,
 				EF943CBC212F25E5005E8B9E /* PersonDetailViewController.swift in Sources */,
 				EF3ABF27211C8519007594E7 /* ListCell.swift in Sources */,
 				EF32AD4920F4F06C004EEB34 /* ProjectX.xcdatamodeld in Sources */,
