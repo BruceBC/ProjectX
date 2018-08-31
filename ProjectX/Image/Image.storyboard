@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eyK-6r-L0m">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image View Controller-->
+        <scene sceneID="mLn-KJ-3k5">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewController" id="oCw-lF-BpW" customClass="ImageViewController" customModule="ProjectX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MFl-5C-nyE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainGuy" translatesAutoresizingMaskIntoConstraints="NO" id="U76-SO-dIP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toH-HK-BiZ">
+                                <rect key="frame" x="325" y="15" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="tR4-qk-Wsy"/>
+                                    <constraint firstAttribute="height" constant="35" id="z3D-ig-bP7"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcY-Ne-7AP">
+                                <rect key="frame" x="15" y="15" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="IS3-zD-JOZ"/>
+                                    <constraint firstAttribute="height" constant="35" id="vit-y1-nV8"/>
+                                </constraints>
+                                <state key="normal" image="person"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AcY-Ne-7AP" firstAttribute="top" secondItem="MFl-5C-nyE" secondAttribute="top" constant="15" id="Rzz-nK-0CC"/>
+                            <constraint firstItem="U76-SO-dIP" firstAttribute="leading" secondItem="eHW-AR-z0P" secondAttribute="leading" id="bMr-c7-WCi"/>
+                            <constraint firstItem="eHW-AR-z0P" firstAttribute="trailing" secondItem="toH-HK-BiZ" secondAttribute="trailing" constant="15" id="ey5-KC-3sE"/>
+                            <constraint firstItem="AcY-Ne-7AP" firstAttribute="leading" secondItem="eHW-AR-z0P" secondAttribute="leading" constant="15" id="fRe-Kc-8lT"/>
+                            <constraint firstItem="eHW-AR-z0P" firstAttribute="bottom" secondItem="U76-SO-dIP" secondAttribute="bottom" id="gIg-Sv-bBd"/>
+                            <constraint firstItem="U76-SO-dIP" firstAttribute="trailing" secondItem="eHW-AR-z0P" secondAttribute="trailing" id="hZ7-Rn-HaP"/>
+                            <constraint firstItem="U76-SO-dIP" firstAttribute="top" secondItem="MFl-5C-nyE" secondAttribute="top" id="lob-nA-nCp"/>
+                            <constraint firstItem="toH-HK-BiZ" firstAttribute="top" secondItem="MFl-5C-nyE" secondAttribute="top" constant="15" id="qRA-Tp-dl9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eHW-AR-z0P"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="toH-HK-BiZ" id="pIH-9F-vIn"/>
+                        <outlet property="imageView" destination="U76-SO-dIP" id="D7P-IV-1Na"/>
+                        <outlet property="profileButton" destination="AcY-Ne-7AP" id="3K5-cg-6aL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTS-wt-Rpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="-547"/>
+        </scene>
+        <!--Image Page View Controller-->
+        <scene sceneID="Zec-CU-Kz2">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="crossDissolve" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="eyK-6r-L0m" customClass="ImagePageViewController" customModule="ProjectX" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ayt-te-ofG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="-547"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="50" height="50"/>
+        <image name="person" width="48" height="48"/>
+        <image name="trainGuy" width="730" height="1095"/>
+    </resources>
+</document>

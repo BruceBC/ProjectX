@@ -14,7 +14,7 @@ fileprivate enum Interactor {
     case userSuccess(User)
 }
 
-class ViewController: UIViewController {
+class SearchViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var followerView: UIView!
     @IBOutlet weak var bottomView: UIView!
@@ -43,11 +43,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTransitions()
         setupNotifications()
         setupFollowerView()
         setupLabels(user: StateManager.shared.users.first) // Call before bottomView
         setupBottomView()
         setupButtons()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     // MARK: - IBActions
@@ -66,7 +77,13 @@ class ViewController: UIViewController {
 }
 
 // MARK: - Setup
-extension ViewController {
+extension SearchViewController {
+    func setupTransitions() {
+        // push/pop
+        //https://stackoverflow.com/questions/45693684/the-navigation-controller-delegate-method-is-not-getting-a-call
+        self.navigationController?.delegate = self
+    }
+    
     func setupNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(didSwipe(_:)), name: .didSwipe, object: nil)
     }
@@ -131,7 +148,7 @@ extension ViewController {
 }
 
 // MARK: Network Handlers
-extension ViewController {
+extension SearchViewController {
     func getUser() {
         userGetterInteractor.getUser { result in
             switch result {
@@ -278,7 +295,7 @@ extension ViewController {
 }
 
 // MARK: - Listeners
-extension ViewController {
+extension SearchViewController {
     @objc func didSwipe(_ notification: Notification) {
         guard
             let user  = notification.userInfo?["user"] as? User,
@@ -290,35 +307,59 @@ extension ViewController {
 }
 
 // MARK: - Gesture Actions
-extension ViewController {
+extension SearchViewController {
     @objc func didTapBottomView() {
-        performSegue(withIdentifier: SegueIdentifiers.showPersonDetailViewController, sender: self)
+        performSegue(withIdentifier: SegueIdentifiers.showSearchDetailViewController, sender: self)
     }
 }
 
 // MARK: Navigation
-extension ViewController {
+extension SearchViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueIdentifiers.showPersonDetailViewController {
-            guard let vc = segue.destination as? PersonDetailViewController else { return }
-            vc.transitioningDelegate = self
+        if segue.identifier == SegueIdentifiers.showSearchDetailViewController {
+            guard let vc = segue.destination as? SearchDetailViewController else { return }
+            vc.transitioningDelegate = self // modal
+//            vc.navigationController?.transitioningDelegate = self // push/pop
             vc.personDetailModel = personDetailModel
         }
     }
 }
 
-// MARK: Transition Delegate
-extension ViewController: UIViewControllerTransitioningDelegate {
+// MARK: Modal Transition Delegate - This will only be fired when a modal or it's equivalent is presented or dismissed
+extension SearchViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         var frame = bottomView.frame
         frame.origin.y = followerView.frame.origin.y
-        return DetailPresentAnimationController(bottomView.frame, model: personDetailModel)
+        return SearchDetailPresentAnimationController(bottomView.frame, model: personDetailModel)
+    }
+}
+
+// MARK: - Navigation Transition Delegate - This will only be fired when a view controller is pushed or popped
+//https://stackoverflow.com/questions/45910210/how-to-apply-custom-transition-animation-in-uinavigationcontrollerdelegate-to-sp
+extension SearchViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        switch operation {
+        case .none:
+            return nil
+        case .push:
+            if toVC is SearchDetailViewController {
+                var frame = bottomView.frame
+                frame.origin.y = followerView.frame.origin.y
+                return SearchDetailPresentAnimationController(bottomView.frame, model: personDetailModel)
+            }
+            return nil
+        case .pop:
+//            if fromVC is SearchDetailViewController {
+//                return Something
+//            }
+            return nil
+        }
     }
 }
 
 // MARK: - Models
-extension ViewController {
-    var personDetailModel: PersonDetailViewModel {
+extension SearchViewController {
+    var personDetailModel: SearchDetailPresentTransitionViewModel {
         guard
             let name = nameLabel.text,
             let state = locationLabel.text
@@ -327,9 +368,9 @@ extension ViewController {
         }
         // TODO: These images shouldn't be hardcoded, but should be gotten from ImagePageViewController somehow
         let profileViewModel = [#imageLiteral(resourceName: "trainGuy"), #imageLiteral(resourceName: "sunglassesGirl"), #imageLiteral(resourceName: "cityBoy"), #imageLiteral(resourceName: "uncomfortableGirl")]
-            .map { ProfileViewModel(image: $0) }[currentIndex]
+            .map { ImageViewModel(image: $0) }[currentIndex]
         
-        return PersonDetailViewModel(
+        return SearchDetailPresentTransitionViewModel(
             name: name,
             state: state,
             description: "Photographer at 'Le Monde', blogger and freelance journalist",
@@ -339,7 +380,7 @@ extension ViewController {
 }
 
 // MARK: - Helpers
-extension ViewController {
+extension SearchViewController {
     func isFollowingButton() {
         let width = CGFloat(35)
         followButton.setTitle(nil, for: .normal)

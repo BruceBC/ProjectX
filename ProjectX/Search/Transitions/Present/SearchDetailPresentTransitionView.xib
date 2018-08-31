@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PersonDetail" customModule="ProjectX" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchDetailPresentTransitionView" customModule="ProjectX" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -180,28 +180,28 @@
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gW-IN-uLP">
                                             <rect key="frame" x="0.0" y="30" width="335" height="120"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainGuy" translatesAutoresizingMaskIntoConstraints="NO" id="yfR-cc-Sef">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="yfR-cc-Sef">
                                                     <rect key="frame" x="10" y="14" width="92" height="92"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="92" id="CvK-Ja-6KN"/>
                                                         <constraint firstAttribute="width" constant="92" id="sMY-kh-RgN"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainGuy" translatesAutoresizingMaskIntoConstraints="NO" id="gNv-V9-MkL">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="gNv-V9-MkL">
                                                     <rect key="frame" x="112" y="14" width="92" height="92"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="92" id="vVy-9s-YSb"/>
                                                         <constraint firstAttribute="width" constant="92" id="xjE-Rn-UNw"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainGuy" translatesAutoresizingMaskIntoConstraints="NO" id="tJk-BW-ZWy">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="tJk-BW-ZWy">
                                                     <rect key="frame" x="214" y="14" width="92" height="92"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="92" id="EMg-WJ-HvP"/>
                                                         <constraint firstAttribute="height" constant="92" id="z77-3u-LzJ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trainGuy" translatesAutoresizingMaskIntoConstraints="NO" id="FbF-rY-JjC">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="FbF-rY-JjC">
                                                     <rect key="frame" x="316" y="14" width="92" height="92"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="92" id="CrQ-eZ-xs6"/>
@@ -262,12 +262,16 @@
                 <outlet property="followButton" destination="mHv-fB-7CH" id="jWt-sI-SRg"/>
                 <outlet property="followerView" destination="AdD-Ta-5nz" id="XXl-jV-YF3"/>
                 <outlet property="nameLabel" destination="n4S-9L-fwG" id="r5E-iJ-San"/>
+                <outlet property="placeholder1ImageView" destination="yfR-cc-Sef" id="Iph-5s-7ld"/>
+                <outlet property="placeholder2ImageView" destination="gNv-V9-MkL" id="l0D-Ax-Uy3"/>
+                <outlet property="placeholder3ImageView" destination="tJk-BW-ZWy" id="fhY-vu-VFf"/>
+                <outlet property="placeholder4ImageView" destination="FbF-rY-JjC" id="oeS-Px-UlF"/>
                 <outlet property="stateLabel" destination="HI5-so-gU6" id="90j-Bp-gvs"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>
     <resources>
-        <image name="trainGuy" width="730" height="1095"/>
+        <image name="placeholder" width="420" height="320"/>
     </resources>
 </document>

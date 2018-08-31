@@ -15,7 +15,7 @@ class ImageViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     // MARK: Properties
-    var profile: ProfileViewModel?
+    var profile: ImageViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

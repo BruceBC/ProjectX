@@ -28,7 +28,7 @@ class ImagePageViewController: UIPageViewController {
 extension ImagePageViewController {
     private func getPages() -> [ImageViewController] {
         return [#imageLiteral(resourceName: "trainGuy"), #imageLiteral(resourceName: "sunglassesGirl"), #imageLiteral(resourceName: "cityBoy"), #imageLiteral(resourceName: "uncomfortableGirl")]
-            .map { ProfileViewModel(image: $0) }
+            .map { ImageViewModel(image: $0) }
             .compactMap { profile in
                 guard let vc: ImageViewController = getViewController(withIdentifier: "ImageViewController") else { return nil }
                 vc.profile = profile
@@ -38,7 +38,7 @@ extension ImagePageViewController {
     
     private func getViewController<T>(withIdentifier identifier: String) -> T?
     {
-        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier) as? T else { return nil }
+        guard let vc = UIStoryboard(name: "Image", bundle: nil).instantiateViewController(withIdentifier: identifier) as? T else { return nil }
         return vc
     }
 }

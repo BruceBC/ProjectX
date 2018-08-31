@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EF32AD4120F4F06C004EEB34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32AD4020F4F06C004EEB34 /* AppDelegate.swift */; };
-		EF32AD4320F4F06C004EEB34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32AD4220F4F06C004EEB34 /* ViewController.swift */; };
+		EF32AD4320F4F06C004EEB34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32AD4220F4F06C004EEB34 /* SearchViewController.swift */; };
 		EF32AD4620F4F06C004EEB34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF32AD4420F4F06C004EEB34 /* Main.storyboard */; };
 		EF32AD4920F4F06C004EEB34 /* ProjectX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF32AD4720F4F06C004EEB34 /* ProjectX.xcdatamodeld */; };
 		EF32AD4B20F4F06F004EEB34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF32AD4A20F4F06F004EEB34 /* Assets.xcassets */; };
@@ -60,13 +60,12 @@
 		EF3ABFFA2123007D007594E7 /* ImageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFF92123007D007594E7 /* ImageResult.swift */; };
 		EF3ABFFC212300FC007594E7 /* ImageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFFB212300FC007594E7 /* ImageError.swift */; };
 		EF3ABFFF21230923007594E7 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3ABFFE21230923007594E7 /* Aliases.swift */; };
-		EF8E1F0B20FD2E0200E6DCB9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */; };
+		EF8E1F0B20FD2E0200E6DCB9 /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0A20FD2E0200E6DCB9 /* ImageViewModel.swift */; };
 		EF8E1F0D20FD402700E6DCB9 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E1F0C20FD402700E6DCB9 /* StateManager.swift */; };
-		EF943CBC212F25E5005E8B9E /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF943CBB212F25E5005E8B9E /* PersonDetailViewController.swift */; };
-		EF943CC7212F2683005E8B9E /* DetailPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF943CC6212F2683005E8B9E /* DetailPresentAnimationController.swift */; };
-		EF943CCB212F3164005E8B9E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF943CCA212F3164005E8B9E /* PhotoCell.swift */; };
-		EF943CCD21305C9A005E8B9E /* PersonDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF943CCC21305C9A005E8B9E /* PersonDetail.xib */; };
-		EF943CCF21305DED005E8B9E /* PersonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF943CCE21305DED005E8B9E /* PersonDetail.swift */; };
+		EF943CBC212F25E5005E8B9E /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF943CBB212F25E5005E8B9E /* SearchDetailViewController.swift */; };
+		EF943CC7212F2683005E8B9E /* SearchDetailPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF943CC6212F2683005E8B9E /* SearchDetailPresentAnimationController.swift */; };
+		EF943CCD21305C9A005E8B9E /* SearchDetailPresentTransitionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF943CCC21305C9A005E8B9E /* SearchDetailPresentTransitionView.xib */; };
+		EF943CCF21305DED005E8B9E /* SearchDetailPresentTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF943CCE21305DED005E8B9E /* SearchDetailPresentTransitionView.swift */; };
 		EFAE417F20F8EDBC00621B0B /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */; };
 		EFAE418220F9097600621B0B /* Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418120F9097600621B0B /* Examples.swift */; };
 		EFAE418420F9122300621B0B /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE418320F9122300621B0B /* UIImageView+Extensions.swift */; };
@@ -79,7 +78,9 @@
 		EFAE41A420F9505600621B0B /* ImagePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE41A320F9505600621B0B /* ImagePageViewController.swift */; };
 		EFAE41AE20FCEDFB00621B0B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE41AD20FCEDFB00621B0B /* UIView+Extensions.swift */; };
 		EFAE41B020FCEE1B00621B0B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE41AF20FCEE1B00621B0B /* String+Extensions.swift */; };
-		EFB201F721347F2D00CFD3F1 /* PersonPhotosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB201F621347F2D00CFD3F1 /* PersonPhotosListViewController.swift */; };
+		EFB201F721347F2D00CFD3F1 /* SearchDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB201F621347F2D00CFD3F1 /* SearchDetailListViewController.swift */; };
+		EFB20287213972C400CFD3F1 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB20286213972C400CFD3F1 /* Search.storyboard */; };
+		EFB2028A2139750E00CFD3F1 /* Image.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB202892139750E00CFD3F1 /* Image.storyboard */; };
 		EFDE580620FFB95900839E36 /* Notification.Name+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580520FFB95900839E36 /* Notification.Name+Extensions.swift */; };
 		EFDE580920FFBB7200839E36 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580820FFBB7200839E36 /* LaunchViewController.swift */; };
 		EFDE580B20FFBC7800839E36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580A20FFBC7800839E36 /* Constants.swift */; };
@@ -203,7 +204,7 @@
 /* Begin PBXFileReference section */
 		EF32AD3D20F4F06C004EEB34 /* ProjectX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF32AD4020F4F06C004EEB34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EF32AD4220F4F06C004EEB34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF32AD4220F4F06C004EEB34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		EF32AD4520F4F06C004EEB34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF32AD4820F4F06C004EEB34 /* ProjectX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjectX.xcdatamodel; sourceTree = "<group>"; };
 		EF32AD4A20F4F06F004EEB34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -248,13 +249,12 @@
 		EF3ABFF92123007D007594E7 /* ImageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResult.swift; sourceTree = "<group>"; };
 		EF3ABFFB212300FC007594E7 /* ImageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageError.swift; sourceTree = "<group>"; };
 		EF3ABFFE21230923007594E7 /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
-		EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		EF8E1F0A20FD2E0200E6DCB9 /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
 		EF8E1F0C20FD402700E6DCB9 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
-		EF943CBB212F25E5005E8B9E /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
-		EF943CC6212F2683005E8B9E /* DetailPresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresentAnimationController.swift; sourceTree = "<group>"; };
-		EF943CCA212F3164005E8B9E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
-		EF943CCC21305C9A005E8B9E /* PersonDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonDetail.xib; sourceTree = "<group>"; };
-		EF943CCE21305DED005E8B9E /* PersonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetail.swift; sourceTree = "<group>"; };
+		EF943CBB212F25E5005E8B9E /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
+		EF943CC6212F2683005E8B9E /* SearchDetailPresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailPresentAnimationController.swift; sourceTree = "<group>"; };
+		EF943CCC21305C9A005E8B9E /* SearchDetailPresentTransitionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchDetailPresentTransitionView.xib; sourceTree = "<group>"; };
+		EF943CCE21305DED005E8B9E /* SearchDetailPresentTransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailPresentTransitionView.swift; sourceTree = "<group>"; };
 		EFAE417E20F8EDBC00621B0B /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
 		EFAE418120F9097600621B0B /* Examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examples.swift; sourceTree = "<group>"; };
 		EFAE418320F9122300621B0B /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
@@ -267,7 +267,9 @@
 		EFAE41A320F9505600621B0B /* ImagePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePageViewController.swift; sourceTree = "<group>"; };
 		EFAE41AD20FCEDFB00621B0B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		EFAE41AF20FCEE1B00621B0B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		EFB201F621347F2D00CFD3F1 /* PersonPhotosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPhotosListViewController.swift; sourceTree = "<group>"; };
+		EFB201F621347F2D00CFD3F1 /* SearchDetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailListViewController.swift; sourceTree = "<group>"; };
+		EFB20286213972C400CFD3F1 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		EFB202892139750E00CFD3F1 /* Image.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Image.storyboard; sourceTree = "<group>"; };
 		EFDE580520FFB95900839E36 /* Notification.Name+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extensions.swift"; sourceTree = "<group>"; };
 		EFDE580820FFBB7200839E36 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		EFDE580A20FFBC7800839E36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -325,20 +327,21 @@
 		EF32AD3F20F4F06C004EEB34 /* ProjectX */ = {
 			isa = PBXGroup;
 			children = (
-				EF943CC8212F313A005E8B9E /* Person */,
-				EF943CC5212F2642005E8B9E /* Transitions */,
-				EF3ABF21211C83B1007594E7 /* List */,
-				EFDE580720FFBB5800839E36 /* Launch */,
-				EFAE41A220F9502D00621B0B /* Carousel */,
-				EFAE418A20F939B200621B0B /* Shared */,
-				EF32AD9B20F7A71B004EEB34 /* Custom */,
-				EF32AD4020F4F06C004EEB34 /* AppDelegate.swift */,
-				EF32AD4220F4F06C004EEB34 /* ViewController.swift */,
-				EF32AD4420F4F06C004EEB34 /* Main.storyboard */,
-				EF32AD4A20F4F06F004EEB34 /* Assets.xcassets */,
-				EF32AD4C20F4F06F004EEB34 /* LaunchScreen.storyboard */,
 				EF32AD4F20F4F06F004EEB34 /* Info.plist */,
+				EF32AD4020F4F06C004EEB34 /* AppDelegate.swift */,
+				EF32AD4A20F4F06F004EEB34 /* Assets.xcassets */,
+				EFB202832139726E00CFD3F1 /* Cloud */,
+				EF32AD9B20F7A71B004EEB34 /* Custom */,
+				EFB20288213974E700CFD3F1 /* Image */,
+				EFDE580720FFBB5800839E36 /* Launch */,
+				EF32AD4C20F4F06F004EEB34 /* LaunchScreen.storyboard */,
+				EF3ABF21211C83B1007594E7 /* List */,
+				EF32AD4420F4F06C004EEB34 /* Main.storyboard */,
+				EFB202852139729700CFD3F1 /* Messages */,
+				EFB202842139729000CFD3F1 /* Notifications */,
 				EF32AD4720F4F06C004EEB34 /* ProjectX.xcdatamodeld */,
+				EFB2027A2139726500CFD3F1 /* Search */,
+				EFAE418A20F939B200621B0B /* Shared */,
 			);
 			path = ProjectX;
 			sourceTree = "<group>";
@@ -573,29 +576,9 @@
 		EF943CC5212F2642005E8B9E /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
-				EF943CC6212F2683005E8B9E /* DetailPresentAnimationController.swift */,
-				EF943CCC21305C9A005E8B9E /* PersonDetail.xib */,
-				EF943CCE21305DED005E8B9E /* PersonDetail.swift */,
+				EFB2028F21398D1200CFD3F1 /* Present */,
 			);
 			path = Transitions;
-			sourceTree = "<group>";
-		};
-		EF943CC8212F313A005E8B9E /* Person */ = {
-			isa = PBXGroup;
-			children = (
-				EF943CC9212F3150005E8B9E /* Cells */,
-				EF943CBB212F25E5005E8B9E /* PersonDetailViewController.swift */,
-				EFB201F621347F2D00CFD3F1 /* PersonPhotosListViewController.swift */,
-			);
-			path = Person;
-			sourceTree = "<group>";
-		};
-		EF943CC9212F3150005E8B9E /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				EF943CCA212F3164005E8B9E /* PhotoCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		EFAE417D20F8EDAB00621B0B /* Extensions */ = {
@@ -651,14 +634,66 @@
 			path = Twitter;
 			sourceTree = "<group>";
 		};
-		EFAE41A220F9502D00621B0B /* Carousel */ = {
+		EFB2027A2139726500CFD3F1 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				EFB20286213972C400CFD3F1 /* Search.storyboard */,
+				EF32AD4220F4F06C004EEB34 /* SearchViewController.swift */,
+				EFB2028B213978D500CFD3F1 /* Detail */,
+				EF943CC5212F2642005E8B9E /* Transitions */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		EFB202832139726E00CFD3F1 /* Cloud */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cloud;
+			sourceTree = "<group>";
+		};
+		EFB202842139729000CFD3F1 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		EFB202852139729700CFD3F1 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		EFB20288213974E700CFD3F1 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				EFB202892139750E00CFD3F1 /* Image.storyboard */,
 				EFAE41A320F9505600621B0B /* ImagePageViewController.swift */,
 				EFAE41A020F94E6B00621B0B /* ImageViewController.swift */,
-				EF8E1F0A20FD2E0200E6DCB9 /* ProfileViewModel.swift */,
+				EF8E1F0A20FD2E0200E6DCB9 /* ImageViewModel.swift */,
 			);
-			path = Carousel;
+			path = Image;
+			sourceTree = "<group>";
+		};
+		EFB2028B213978D500CFD3F1 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				EF943CBB212F25E5005E8B9E /* SearchDetailViewController.swift */,
+				EFB201F621347F2D00CFD3F1 /* SearchDetailListViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		EFB2028F21398D1200CFD3F1 /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				EF943CC6212F2683005E8B9E /* SearchDetailPresentAnimationController.swift */,
+				EF943CCE21305DED005E8B9E /* SearchDetailPresentTransitionView.swift */,
+				EF943CCC21305C9A005E8B9E /* SearchDetailPresentTransitionView.xib */,
+			);
+			path = Present;
 			sourceTree = "<group>";
 		};
 		EFDE580720FFBB5800839E36 /* Launch */ = {
@@ -865,7 +900,9 @@
 				EF32AD4B20F4F06F004EEB34 /* Assets.xcassets in Resources */,
 				EF3ABF23211C83E6007594E7 /* List.storyboard in Resources */,
 				EF32AD4620F4F06C004EEB34 /* Main.storyboard in Resources */,
-				EF943CCD21305C9A005E8B9E /* PersonDetail.xib in Resources */,
+				EFB20287213972C400CFD3F1 /* Search.storyboard in Resources */,
+				EF943CCD21305C9A005E8B9E /* SearchDetailPresentTransitionView.xib in Resources */,
+				EFB2028A2139750E00CFD3F1 /* Image.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,15 +945,15 @@
 				EFAE417F20F8EDBC00621B0B /* UIView+Blur.swift in Sources */,
 				EFAE418F20F93BBD00621B0B /* TwitterView.swift in Sources */,
 				EFDE580620FFB95900839E36 /* Notification.Name+Extensions.swift in Sources */,
-				EF32AD4320F4F06C004EEB34 /* ViewController.swift in Sources */,
+				EF32AD4320F4F06C004EEB34 /* SearchViewController.swift in Sources */,
 				EF32ADA120F7D2C9004EEB34 /* CustomTabBar.swift in Sources */,
 				EF8E1F0D20FD402700E6DCB9 /* StateManager.swift in Sources */,
 				EFAE41AE20FCEDFB00621B0B /* UIView+Extensions.swift in Sources */,
-				EF943CC7212F2683005E8B9E /* DetailPresentAnimationController.swift in Sources */,
+				EF943CC7212F2683005E8B9E /* SearchDetailPresentAnimationController.swift in Sources */,
 				EFAE41A120F94E6B00621B0B /* ImageViewController.swift in Sources */,
 				EFAE418620F9156400621B0B /* UIButton+Extensions.swift in Sources */,
 				EFDE580B20FFBC7800839E36 /* Constants.swift in Sources */,
-				EF943CCF21305DED005E8B9E /* PersonDetail.swift in Sources */,
+				EF943CCF21305DED005E8B9E /* SearchDetailPresentTransitionView.swift in Sources */,
 				EFDE580920FFBB7200839E36 /* LaunchViewController.swift in Sources */,
 				EF32AD9D20F7A776004EEB34 /* HomeTabBarViewController.swift in Sources */,
 				EF32AD4120F4F06C004EEB34 /* AppDelegate.swift in Sources */,
@@ -926,13 +963,12 @@
 				EFDE580D20FFC3B100839E36 /* UIImage+Extensions.swift in Sources */,
 				EFAE418420F9122300621B0B /* UIImageView+Extensions.swift in Sources */,
 				EFAE41B020FCEE1B00621B0B /* String+Extensions.swift in Sources */,
-				EF8E1F0B20FD2E0200E6DCB9 /* ProfileViewModel.swift in Sources */,
+				EF8E1F0B20FD2E0200E6DCB9 /* ImageViewModel.swift in Sources */,
 				EFAE419120F9401800621B0B /* XibView.swift in Sources */,
-				EFB201F721347F2D00CFD3F1 /* PersonPhotosListViewController.swift in Sources */,
-				EF943CBC212F25E5005E8B9E /* PersonDetailViewController.swift in Sources */,
+				EFB201F721347F2D00CFD3F1 /* SearchDetailListViewController.swift in Sources */,
+				EF943CBC212F25E5005E8B9E /* SearchDetailViewController.swift in Sources */,
 				EF3ABF27211C8519007594E7 /* ListCell.swift in Sources */,
 				EF32AD4920F4F06C004EEB34 /* ProjectX.xcdatamodeld in Sources */,
-				EF943CCB212F3164005E8B9E /* PhotoCell.swift in Sources */,
 				EFAE41A420F9505600621B0B /* ImagePageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

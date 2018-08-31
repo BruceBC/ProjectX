@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct ProfileViewModel {
+struct ImageViewModel {
     let image: UIImage
     
     init(image: UIImage) {

@@ -10,7 +10,7 @@ import UIKit
 import ProjectXCore
 import SwiftyGif
 
-class PersonPhotosListViewController: UIViewController {
+class SearchDetailListViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -28,7 +28,7 @@ class PersonPhotosListViewController: UIViewController {
 }
 
 // MARK: - Setup
-extension PersonPhotosListViewController {
+extension SearchDetailListViewController {
     private func setupController() {
         controller.delegate = self
     }
@@ -38,7 +38,7 @@ extension PersonPhotosListViewController {
     }
 }
 
-extension PersonPhotosListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSourcePrefetching {
+extension SearchDetailListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSourcePrefetching {
     var listReuseidentifier: String {
         return "list"
     }
@@ -85,7 +85,7 @@ extension PersonPhotosListViewController: UICollectionViewDataSource, UICollecti
 }
 
 // MARK: HomeController Delegate
-extension PersonPhotosListViewController: ListControllerDelegate {
+extension SearchDetailListViewController: ListControllerDelegate {
     func onFetchCompleted(with indexPaths: [IndexPath]?) {
         guard let indexPaths = indexPaths else {
             collectionView.reloadData()

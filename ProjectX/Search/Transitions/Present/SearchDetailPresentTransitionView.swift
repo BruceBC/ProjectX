@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct PersonDetailViewModel {
+struct SearchDetailPresentTransitionViewModel {
     let name:        String
     let state:       String
     let description: String
@@ -22,15 +22,18 @@ struct PersonDetailViewModel {
     }
 }
 
-class PersonDetail: UIView {
+class SearchDetailPresentTransitionView: UIView {
     // MARK: - IBOutlets
-    @IBOutlet weak var followButton:     UIButton!
-    @IBOutlet weak var nameLabel:        UILabel!
-    @IBOutlet weak var stateLabel:       UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var followerView: UIView!
-    @IBOutlet weak var bottomView: UIView!
-    
+    @IBOutlet weak var followButton:          UIButton!
+    @IBOutlet weak var nameLabel:             UILabel!
+    @IBOutlet weak var stateLabel:            UILabel!
+    @IBOutlet weak var descriptionLabel:      UILabel!
+    @IBOutlet weak var followerView:          UIView!
+    @IBOutlet weak var bottomView:            UIView!
+    @IBOutlet weak var placeholder1ImageView: UIImageView!
+    @IBOutlet weak var placeholder2ImageView: UIImageView!
+    @IBOutlet weak var placeholder3ImageView: UIImageView!
+    @IBOutlet weak var placeholder4ImageView: UIImageView!
     
     // MARK: Properties
     var defaultFollowButtonWidth = CGFloat(167.5)
@@ -42,11 +45,12 @@ class PersonDetail: UIView {
         setupButtons()
         setupLabels()
         setupFollowerView()
+        setupImageViews()
     }
 }
 
 // MARK: - Setup
-extension PersonDetail {
+extension SearchDetailPresentTransitionView {
     private func setupBottomView() {
         bottomView.layer.masksToBounds = true
         bottomView.roundCorners(corners: [.topLeft, .topRight], size: 35)
@@ -67,7 +71,19 @@ extension PersonDetail {
         followerView.blur(.dark)
     }
     
-    func setup(with model: PersonDetailViewModel) {
+    private func setupImageViews() {
+        placeholder1ImageView.layer.cornerRadius  = 7
+        placeholder2ImageView.layer.cornerRadius  = 7
+        placeholder3ImageView.layer.cornerRadius  = 7
+        placeholder4ImageView.layer.cornerRadius  = 7
+        
+        placeholder1ImageView.layer.masksToBounds = true
+        placeholder2ImageView.layer.masksToBounds = true
+        placeholder3ImageView.layer.masksToBounds = true
+        placeholder4ImageView.layer.masksToBounds = true
+    }
+    
+    func setup(with model: SearchDetailPresentTransitionViewModel) {
         nameLabel.text        = model.name
         stateLabel.text       = model.state
         descriptionLabel.text = model.description
@@ -75,7 +91,7 @@ extension PersonDetail {
 }
 
 // MARK: - Animation
-extension PersonDetail {
+extension SearchDetailPresentTransitionView {
     func showDescription(duration: TimeInterval) {
         UIView.animate(withDuration: duration) {
             self.descriptionLabel.alpha = 1
@@ -90,9 +106,9 @@ extension PersonDetail {
 }
 
 // MARK: - Helpers
-extension PersonDetail {
-    static func getFromNib() -> PersonDetail? {
-        guard let personDetailView = UINib.init(nibName: "PersonDetail", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? PersonDetail else { return nil }
-        return personDetailView
+extension SearchDetailPresentTransitionView {
+    static func getFromNib() -> SearchDetailPresentTransitionView? {
+        guard let searchDetailPresentTransitionView = UINib.init(nibName: "SearchDetailPresentTransitionView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? SearchDetailPresentTransitionView else { return nil }
+        return searchDetailPresentTransitionView
     }
 }

@@ -8,12 +8,12 @@
 
 import UIKit
 
-class DetailPresentAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
+class SearchDetailPresentAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     // MARK: - Properties
     let originalFrame: CGRect
-    let model:         PersonDetailViewModel
+    let model:         SearchDetailPresentTransitionViewModel
     
-    init(_ originalFrame: CGRect, model: PersonDetailViewModel) {
+    init(_ originalFrame: CGRect, model: SearchDetailPresentTransitionViewModel) {
         self.originalFrame = originalFrame
         self.model = model
     }
@@ -27,8 +27,7 @@ class DetailPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
             let fromVC           = transitionContext.viewController(forKey: .from),
             let toVC             = transitionContext.viewController(forKey: .to),
             let snapshot         = toVC.view.snapshotView(afterScreenUpdates: true),
-            let personDetailView = PersonDetail.getFromNib(),
-            let customTabBar     = CustomTabBar.getFromNib()
+            let personDetailView = SearchDetailPresentTransitionView.getFromNib()
         else {
             return
         }
@@ -40,7 +39,6 @@ class DetailPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
         containerView.addSubview(toVC.view)
         containerView.addSubview(snapshot)
         containerView.addSubview(personDetailView)
-        containerView.addSubview(customTabBar)
         toVC.view.isHidden = true
         
         snapshot.alpha = 0
@@ -49,12 +47,7 @@ class DetailPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
         // Setup
         setupPersonDetailView(personDetailView)
         
-        // Pin custom tab bar to bottom of view
-        customTabBar.translatesAutoresizingMaskIntoConstraints = false
-        let customTabBarConstraints = setupTabBarAutoLayout(customTabBar, to: containerView)
-        NSLayoutConstraint.activate(customTabBarConstraints)
-        
-        var bottomConstraint = NSLayoutConstraint(item: personDetailView, attribute: .bottom,   relatedBy: .equal, toItem: containerView.safeAreaLayoutGuide, attribute: .bottom,   multiplier: 1, constant: height - originalFrame.height - 80)
+        let bottomConstraint = NSLayoutConstraint(item: personDetailView, attribute: .bottom,   relatedBy: .equal, toItem: containerView.safeAreaLayoutGuide, attribute: .bottom,   multiplier: 1, constant: height - originalFrame.height - 80)
         NSLayoutConstraint.activate([
             NSLayoutConstraint(item: personDetailView, attribute: .height,  relatedBy: .equal, toItem: nil, attribute: .height,  multiplier: 1, constant: height),
             NSLayoutConstraint(item: personDetailView, attribute: .leading,  relatedBy: .equal, toItem: containerView, attribute: .leading,  multiplier: 1, constant: 0),
@@ -73,7 +66,6 @@ class DetailPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
             toVC.view.isHidden = false
             snapshot.removeFromSuperview()
             personDetailView.removeFromSuperview()
-            customTabBar.removeFromSuperview()
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
         
@@ -85,17 +77,8 @@ class DetailPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
 }
 
 // MARK: - Setup
-extension DetailPresentAnimationController {
-    private func setupTabBarAutoLayout(_ customTabBar: CustomTabBar, to view: UIView) -> [NSLayoutConstraint] {
-        return [
-            NSLayoutConstraint(item: customTabBar, attribute: .height,  relatedBy: .equal, toItem: nil, attribute: .height,  multiplier: 1, constant: customTabBar.frame.height),
-            NSLayoutConstraint(item: customTabBar, attribute: .leading,  relatedBy: .equal, toItem: view, attribute: .leading,  multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: customTabBar, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: customTabBar, attribute: .bottom,   relatedBy: .equal, toItem: view, attribute: .bottom,   multiplier: 1, constant: 0)
-        ]
-    }
-    
-    private func setupPersonDetailView(_ view: PersonDetail) {
+extension SearchDetailPresentAnimationController {
+    private func setupPersonDetailView(_ view: SearchDetailPresentTransitionView) {
         view.setup(with: model)
     }
 }
