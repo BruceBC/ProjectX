@@ -56,10 +56,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="SRX-QV-5ho" kind="relationship" relationship="viewControllers" id="f9u-sl-tAJ"/>
+                        <segue destination="yg2-9X-Xmy" kind="relationship" relationship="viewControllers" id="qQ1-Y0-NBt"/>
                         <segue destination="XeW-5c-ncj" kind="relationship" relationship="viewControllers" id="euU-t2-8eE"/>
-                        <segue destination="0o1-n2-fXg" kind="relationship" relationship="viewControllers" id="6lL-kh-uZP"/>
-                        <segue destination="skY-72-cYX" kind="relationship" relationship="viewControllers" id="qXZ-kB-eke"/>
+                        <segue destination="cWq-0k-LFA" kind="relationship" relationship="viewControllers" id="U0q-vp-7LI"/>
+                        <segue destination="mdQ-9z-hP8" kind="relationship" relationship="viewControllers" id="Zqd-jD-Kmo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V48-4M-pBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -74,68 +74,40 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fvg-Fv-gie" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1679" y="667"/>
+            <point key="canvasLocation" x="-1814" y="667"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="239-gy-hMu">
+        <!--Notification-->
+        <scene sceneID="RBv-G5-bN9">
             <objects>
-                <viewController id="SRX-QV-5ho" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a0b-Ws-NxR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="fQ2-k9-0st"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" image="cloud" id="NiU-0o-ZPi">
-                        <inset key="imageInsets" minX="0.0" minY="21" maxX="0.0" maxY="-21"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ja8-G8-SuF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Notification" id="cWq-0k-LFA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vfA-Rr-2Hd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Krq-NR-maF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="174" y="195"/>
+            <point key="canvasLocation" x="-1555" y="667"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="6os-zZ-oi1">
+        <!--Message-->
+        <scene sceneID="krl-2g-yUK">
             <objects>
-                <viewController id="0o1-n2-fXg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SkW-lK-u4V">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="ALM-yS-k88"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" image="notification" selectedImage="notificationActive" id="zKk-TI-D4r">
-                        <inset key="imageInsets" minX="0.0" minY="21" maxX="0.0" maxY="-21"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="htU-4F-ZYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Message" id="mdQ-9z-hP8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="FXX-gA-T63"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kvk-Wb-BHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="195"/>
+            <point key="canvasLocation" x="-1289" y="667"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hki-0d-vyY">
+        <!--Cloud-->
+        <scene sceneID="RB5-TU-xeN">
             <objects>
-                <viewController id="skY-72-cYX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="D4C-rL-IAY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="n32-dw-m6e"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" image="message" id="B4Y-Qn-O6I">
-                        <inset key="imageInsets" minX="0.0" minY="21" maxX="0.0" maxY="-21"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ItN-Tg-NYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Cloud" id="yg2-9X-Xmy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ML1-EG-EmR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nDL-uE-uj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="195"/>
+            <point key="canvasLocation" x="-2042" y="667"/>
         </scene>
     </scenes>
     <resources>
-        <image name="cloud" width="48" height="48"/>
-        <image name="message" width="48" height="48"/>
-        <image name="notification" width="48" height="48"/>
-        <image name="notificationActive" width="48" height="48"/>
         <image name="x" width="1000" height="1000"/>
     </resources>
 </document>

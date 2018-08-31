@@ -81,6 +81,12 @@
 		EFB201F721347F2D00CFD3F1 /* SearchDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB201F621347F2D00CFD3F1 /* SearchDetailListViewController.swift */; };
 		EFB20287213972C400CFD3F1 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB20286213972C400CFD3F1 /* Search.storyboard */; };
 		EFB2028A2139750E00CFD3F1 /* Image.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB202892139750E00CFD3F1 /* Image.storyboard */; };
+		EFB2029221398F6500CFD3F1 /* Cloud.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB2029121398F6500CFD3F1 /* Cloud.storyboard */; };
+		EFB2029421398FE300CFD3F1 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB2029321398FE300CFD3F1 /* Notification.storyboard */; };
+		EFB202962139905600CFD3F1 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB202952139905600CFD3F1 /* Message.storyboard */; };
+		EFB202982139917600CFD3F1 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB202972139917600CFD3F1 /* MessageViewController.swift */; };
+		EFB2029A213991B900CFD3F1 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB20299213991B900CFD3F1 /* NotificationViewController.swift */; };
+		EFB2029C213991DF00CFD3F1 /* CloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB2029B213991DF00CFD3F1 /* CloudViewController.swift */; };
 		EFDE580620FFB95900839E36 /* Notification.Name+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580520FFB95900839E36 /* Notification.Name+Extensions.swift */; };
 		EFDE580920FFBB7200839E36 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580820FFBB7200839E36 /* LaunchViewController.swift */; };
 		EFDE580B20FFBC7800839E36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580A20FFBC7800839E36 /* Constants.swift */; };
@@ -270,6 +276,12 @@
 		EFB201F621347F2D00CFD3F1 /* SearchDetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailListViewController.swift; sourceTree = "<group>"; };
 		EFB20286213972C400CFD3F1 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		EFB202892139750E00CFD3F1 /* Image.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Image.storyboard; sourceTree = "<group>"; };
+		EFB2029121398F6500CFD3F1 /* Cloud.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cloud.storyboard; sourceTree = "<group>"; };
+		EFB2029321398FE300CFD3F1 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		EFB202952139905600CFD3F1 /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		EFB202972139917600CFD3F1 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		EFB20299213991B900CFD3F1 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		EFB2029B213991DF00CFD3F1 /* CloudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudViewController.swift; sourceTree = "<group>"; };
 		EFDE580520FFB95900839E36 /* Notification.Name+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extensions.swift"; sourceTree = "<group>"; };
 		EFDE580820FFBB7200839E36 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		EFDE580A20FFBC7800839E36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -328,18 +340,15 @@
 			isa = PBXGroup;
 			children = (
 				EF32AD4F20F4F06F004EEB34 /* Info.plist */,
-				EF32AD4020F4F06C004EEB34 /* AppDelegate.swift */,
-				EF32AD4A20F4F06F004EEB34 /* Assets.xcassets */,
+				EF32AD4720F4F06C004EEB34 /* ProjectX.xcdatamodeld */,
+				EFB2029021398E9700CFD3F1 /* Application */,
 				EFB202832139726E00CFD3F1 /* Cloud */,
 				EF32AD9B20F7A71B004EEB34 /* Custom */,
 				EFB20288213974E700CFD3F1 /* Image */,
 				EFDE580720FFBB5800839E36 /* Launch */,
-				EF32AD4C20F4F06F004EEB34 /* LaunchScreen.storyboard */,
 				EF3ABF21211C83B1007594E7 /* List */,
-				EF32AD4420F4F06C004EEB34 /* Main.storyboard */,
-				EFB202852139729700CFD3F1 /* Messages */,
-				EFB202842139729000CFD3F1 /* Notifications */,
-				EF32AD4720F4F06C004EEB34 /* ProjectX.xcdatamodeld */,
+				EFB202852139729700CFD3F1 /* Message */,
+				EFB202842139729000CFD3F1 /* Notification */,
 				EFB2027A2139726500CFD3F1 /* Search */,
 				EFAE418A20F939B200621B0B /* Shared */,
 			);
@@ -648,22 +657,28 @@
 		EFB202832139726E00CFD3F1 /* Cloud */ = {
 			isa = PBXGroup;
 			children = (
+				EFB2029121398F6500CFD3F1 /* Cloud.storyboard */,
+				EFB2029B213991DF00CFD3F1 /* CloudViewController.swift */,
 			);
 			path = Cloud;
 			sourceTree = "<group>";
 		};
-		EFB202842139729000CFD3F1 /* Notifications */ = {
+		EFB202842139729000CFD3F1 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				EFB2029321398FE300CFD3F1 /* Notification.storyboard */,
+				EFB20299213991B900CFD3F1 /* NotificationViewController.swift */,
 			);
-			path = Notifications;
+			path = Notification;
 			sourceTree = "<group>";
 		};
-		EFB202852139729700CFD3F1 /* Messages */ = {
+		EFB202852139729700CFD3F1 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				EFB202952139905600CFD3F1 /* Message.storyboard */,
+				EFB202972139917600CFD3F1 /* MessageViewController.swift */,
 			);
-			path = Messages;
+			path = Message;
 			sourceTree = "<group>";
 		};
 		EFB20288213974E700CFD3F1 /* Image */ = {
@@ -694,6 +709,17 @@
 				EF943CCC21305C9A005E8B9E /* SearchDetailPresentTransitionView.xib */,
 			);
 			path = Present;
+			sourceTree = "<group>";
+		};
+		EFB2029021398E9700CFD3F1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EF32AD4020F4F06C004EEB34 /* AppDelegate.swift */,
+				EF32AD4A20F4F06F004EEB34 /* Assets.xcassets */,
+				EF32AD4420F4F06C004EEB34 /* Main.storyboard */,
+				EF32AD4C20F4F06F004EEB34 /* LaunchScreen.storyboard */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		EFDE580720FFBB5800839E36 /* Launch */ = {
@@ -898,7 +924,10 @@
 				EFAE418C20F939DF00621B0B /* TwitterView.xib in Resources */,
 				EF32AD4E20F4F06F004EEB34 /* LaunchScreen.storyboard in Resources */,
 				EF32AD4B20F4F06F004EEB34 /* Assets.xcassets in Resources */,
+				EFB2029221398F6500CFD3F1 /* Cloud.storyboard in Resources */,
 				EF3ABF23211C83E6007594E7 /* List.storyboard in Resources */,
+				EFB202962139905600CFD3F1 /* Message.storyboard in Resources */,
+				EFB2029421398FE300CFD3F1 /* Notification.storyboard in Resources */,
 				EF32AD4620F4F06C004EEB34 /* Main.storyboard in Resources */,
 				EFB20287213972C400CFD3F1 /* Search.storyboard in Resources */,
 				EF943CCD21305C9A005E8B9E /* SearchDetailPresentTransitionView.xib in Resources */,
@@ -942,6 +971,7 @@
 			files = (
 				EFAE418220F9097600621B0B /* Examples.swift in Sources */,
 				EFAE418820F9162E00621B0B /* Array+Extensions.swift in Sources */,
+				EFB2029A213991B900CFD3F1 /* NotificationViewController.swift in Sources */,
 				EFAE417F20F8EDBC00621B0B /* UIView+Blur.swift in Sources */,
 				EFAE418F20F93BBD00621B0B /* TwitterView.swift in Sources */,
 				EFDE580620FFB95900839E36 /* Notification.Name+Extensions.swift in Sources */,
@@ -953,6 +983,7 @@
 				EFAE41A120F94E6B00621B0B /* ImageViewController.swift in Sources */,
 				EFAE418620F9156400621B0B /* UIButton+Extensions.swift in Sources */,
 				EFDE580B20FFBC7800839E36 /* Constants.swift in Sources */,
+				EFB2029C213991DF00CFD3F1 /* CloudViewController.swift in Sources */,
 				EF943CCF21305DED005E8B9E /* SearchDetailPresentTransitionView.swift in Sources */,
 				EFDE580920FFBB7200839E36 /* LaunchViewController.swift in Sources */,
 				EF32AD9D20F7A776004EEB34 /* HomeTabBarViewController.swift in Sources */,
@@ -965,6 +996,7 @@
 				EFAE41B020FCEE1B00621B0B /* String+Extensions.swift in Sources */,
 				EF8E1F0B20FD2E0200E6DCB9 /* ImageViewModel.swift in Sources */,
 				EFAE419120F9401800621B0B /* XibView.swift in Sources */,
+				EFB202982139917600CFD3F1 /* MessageViewController.swift in Sources */,
 				EFB201F721347F2D00CFD3F1 /* SearchDetailListViewController.swift in Sources */,
 				EF943CBC212F25E5005E8B9E /* SearchDetailViewController.swift in Sources */,
 				EF3ABF27211C8519007594E7 /* ListCell.swift in Sources */,

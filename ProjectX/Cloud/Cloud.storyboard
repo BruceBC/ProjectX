@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hT1-bd-lsE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cloud View Controller-->
+        <scene sceneID="0sX-3W-pjm">
+            <objects>
+                <viewController id="RYc-po-uEh" customClass="CloudViewController" customModule="ProjectX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uS8-N8-XQq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="uj4-vh-gf1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Z44-ma-fvh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pmQ-Bv-SJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1112.8" y="194.75262368815595"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aaa-vp-l83">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hT1-bd-lsE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" image="cloud" id="isn-tK-Ltp">
+                        <inset key="imageInsets" minX="0.0" minY="21" maxX="0.0" maxY="-21"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9df-Px-MWc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RYc-po-uEh" kind="relationship" relationship="rootViewController" id="OaS-hs-Qbm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1xF-X3-7db" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173.59999999999999" y="194.75262368815595"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cloud" width="48" height="48"/>
+    </resources>
+</document>
