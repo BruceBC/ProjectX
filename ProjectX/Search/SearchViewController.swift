@@ -34,6 +34,7 @@ class SearchViewController: UIViewController {
     
     // MARK: - Properties
     typealias userGetterInteractor = UserGetterInteractor
+    var swipeInteractionController: SearchSwipePresentInteractionController?
     var searchDetailViewController: SearchDetailViewController?
     var currentIndex = 0
     var defaultFollowButtonWidth = CGFloat(167.5)
@@ -60,7 +61,7 @@ class SearchViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     // MARK: - IBActions
@@ -84,6 +85,7 @@ extension SearchViewController {
         // push/pop
         //https://stackoverflow.com/questions/45693684/the-navigation-controller-delegate-method-is-not-getting-a-call
         self.navigationController?.delegate = self
+        swipeInteractionController = SearchSwipePresentInteractionController(from: self, to: SegueIdentifiers.showSearchDetailViewController, view: bottomView)
     }
     
     func setupNotifications() {
@@ -119,10 +121,6 @@ extension SearchViewController {
                                completion: completion)
             }
         }
-        
-        // Setup gesture recognizer
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapBottomView))
-        bottomView.addGestureRecognizer(gestureRecognizer)
     }
     
     func setupLabels(user: User?) {
@@ -318,13 +316,6 @@ extension SearchViewController {
     }
 }
 
-// MARK: - Gesture Actions
-extension SearchViewController {
-    @objc func didTapBottomView() {
-        performSegue(withIdentifier: SegueIdentifiers.showSearchDetailViewController, sender: self)
-    }
-}
-
 // MARK: Navigation
 extension SearchViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -343,7 +334,7 @@ extension SearchViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         var frame = bottomView.frame
         frame.origin.y = followerView.frame.origin.y
-        return SearchDetailPresentAnimationController(bottomView.frame, model: searchDetailPresentTransitionModel, index: currentIndex)
+        return SearchDetailPresentAnimationController(bottomView.frame, model: searchDetailPresentTransitionModel, index: currentIndex, interactionController: self.swipeInteractionController)
     }
 }
 
@@ -358,7 +349,7 @@ extension SearchViewController: UINavigationControllerDelegate {
             if toVC is SearchDetailViewController {
                 var frame = bottomView.frame
                 frame.origin.y = followerView.frame.origin.y
-                return SearchDetailPresentAnimationController(bottomView.frame, model: searchDetailPresentTransitionModel, index: currentIndex)
+                return SearchDetailPresentAnimationController(bottomView.frame, model: searchDetailPresentTransitionModel, index: currentIndex, interactionController: self.swipeInteractionController)
             }
             return nil
         case .pop:
@@ -377,26 +368,38 @@ extension SearchViewController: UINavigationControllerDelegate {
     }
     
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        guard
-            let animator = animationController as? SearchDetailDismissAnimationController,
-            let interactionController = animator.interactionController,
-            interactionController.interactionInProgress
-        else {
-            return nil
+        // Present
+        if let animator = animationController as? SearchDetailPresentAnimationController {
+            guard
+                let interactionController = animator.interactionController,
+                interactionController.interactionInProgress
+            else {
+                return nil
+            }
+            
+            return interactionController
         }
         
-        return interactionController
+        // Dismiss
+        if let animator = animationController as? SearchDetailDismissAnimationController {
+            guard
+                let interactionController = animator.interactionController,
+                interactionController.interactionInProgress
+            else {
+                return nil
+            }
+            
+            return interactionController
+        }
+        
+        return nil
     }
 }
 
 // MARK: - Models
 extension SearchViewController {
     var searchDetailPresentTransitionModel: SearchDetailPresentTransitionViewModel {
-        guard
-            let user = StateManager.shared.users.first
-        else {
-            fatalError("Could not retrieve properties.")
-        }
+        let user = StateManager.shared.users[currentIndex]
         // TODO: These images shouldn't be hardcoded, but should be gotten from ImagePageViewController somehow
         let profileViewModel = [#imageLiteral(resourceName: "trainGuy"), #imageLiteral(resourceName: "sunglassesGirl"), #imageLiteral(resourceName: "cityBoy"), #imageLiteral(resourceName: "uncomfortableGirl")]
             .map { ImageViewModel(image: $0) }[currentIndex]

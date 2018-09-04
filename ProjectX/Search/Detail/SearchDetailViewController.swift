@@ -54,7 +54,7 @@ class SearchDetailViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     // MARK: - IBActions
@@ -117,13 +117,6 @@ extension SearchDetailViewController {
         followingLabel.text      = model.followingTitle
         followingCountLabel.text = model.followingCount
         imageView.image          = model.image
-    }
-}
-
-// MARK: - Gesture Actions
-extension SearchDetailViewController {
-    @objc func didTapBottomView() {
-        self.navigationController?.popViewController(animated: true)
     }
 }
 

@@ -9,10 +9,10 @@
 import UIKit
 
 class SearchDetailDismissAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
-    let interactionController: SearchSwipeDismissInteractionController?
     let bottomView:            UIView
     let followView:            UIView
     let descriptionLabel:      UILabel
+    let interactionController: SearchSwipeDismissInteractionController?
     
     init(bottomView: UIView, followView: UIView, descriptionLabel: UILabel, interactionController: SearchSwipeDismissInteractionController?) {
         self.bottomView            = bottomView

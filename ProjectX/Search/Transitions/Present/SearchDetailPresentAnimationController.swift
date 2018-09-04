@@ -13,11 +13,13 @@ class SearchDetailPresentAnimationController: NSObject, UIViewControllerAnimated
     let originalFrame: CGRect
     let model:         SearchDetailPresentTransitionViewModel
     let index:         Int
+    let interactionController: SearchSwipePresentInteractionController?
     
-    init(_ originalFrame: CGRect, model: SearchDetailPresentTransitionViewModel, index: Int) {
-        self.originalFrame = originalFrame
-        self.model = model
-        self.index = index
+    init(_ originalFrame: CGRect, model: SearchDetailPresentTransitionViewModel, index: Int, interactionController: SearchSwipePresentInteractionController?) {
+        self.originalFrame         = originalFrame
+        self.model                 = model
+        self.index                 = index
+        self.interactionController = interactionController
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
