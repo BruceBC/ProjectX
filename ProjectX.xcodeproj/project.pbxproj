@@ -91,6 +91,7 @@
 		EFB202AE2139BD6B00CFD3F1 /* SearchDetailDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB202AD2139BD6B00CFD3F1 /* SearchDetailDismissAnimationController.swift */; };
 		EFB202B1213EDB7A00CFD3F1 /* SearchSwipeDismissInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB202B0213EDB7A00CFD3F1 /* SearchSwipeDismissInteractionController.swift */; };
 		EFB202B3213EF58A00CFD3F1 /* SearchSwipePresentInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB202B2213EF58A00CFD3F1 /* SearchSwipePresentInteractionController.swift */; };
+		EFB202B8213F037400CFD3F1 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB202B7213F037400CFD3F1 /* ListDetailViewController.swift */; };
 		EFDE580620FFB95900839E36 /* Notification.Name+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580520FFB95900839E36 /* Notification.Name+Extensions.swift */; };
 		EFDE580920FFBB7200839E36 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580820FFBB7200839E36 /* LaunchViewController.swift */; };
 		EFDE580B20FFBC7800839E36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE580A20FFBC7800839E36 /* Constants.swift */; };
@@ -290,6 +291,7 @@
 		EFB202AD2139BD6B00CFD3F1 /* SearchDetailDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailDismissAnimationController.swift; sourceTree = "<group>"; };
 		EFB202B0213EDB7A00CFD3F1 /* SearchSwipeDismissInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSwipeDismissInteractionController.swift; sourceTree = "<group>"; };
 		EFB202B2213EF58A00CFD3F1 /* SearchSwipePresentInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSwipePresentInteractionController.swift; sourceTree = "<group>"; };
+		EFB202B7213F037400CFD3F1 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		EFDE580520FFB95900839E36 /* Notification.Name+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extensions.swift"; sourceTree = "<group>"; };
 		EFDE580820FFBB7200839E36 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		EFDE580A20FFBC7800839E36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 		EF3ABF21211C83B1007594E7 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				EFB202B4213F033F00CFD3F1 /* Detail */,
 				EF3ABF29211C85D2007594E7 /* Models */,
 				EF3ABF28211C85C8007594E7 /* Cells */,
 				EF3ABF22211C83E5007594E7 /* List.storyboard */,
@@ -758,6 +761,14 @@
 			path = Interaction;
 			sourceTree = "<group>";
 		};
+		EFB202B4213F033F00CFD3F1 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				EFB202B7213F037400CFD3F1 /* ListDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		EFDE580720FFBB5800839E36 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -1014,6 +1025,7 @@
 				EFDE580620FFB95900839E36 /* Notification.Name+Extensions.swift in Sources */,
 				EF32AD4320F4F06C004EEB34 /* SearchViewController.swift in Sources */,
 				EF32ADA120F7D2C9004EEB34 /* CustomTabBar.swift in Sources */,
+				EFB202B8213F037400CFD3F1 /* ListDetailViewController.swift in Sources */,
 				EF8E1F0D20FD402700E6DCB9 /* StateManager.swift in Sources */,
 				EFAE41AE20FCEDFB00621B0B /* UIView+Extensions.swift in Sources */,
 				EF943CC7212F2683005E8B9E /* SearchDetailPresentAnimationController.swift in Sources */,

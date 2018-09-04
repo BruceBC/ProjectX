@@ -81,6 +81,74 @@
             </objects>
             <point key="canvasLocation" x="580" y="25.637181409295355"/>
         </scene>
+        <!--List Detail View Controller-->
+        <scene sceneID="DFG-Bc-e9R">
+            <objects>
+                <viewController storyboardIdentifier="ListDetailViewController" id="r8M-U7-dhj" customClass="ListDetailViewController" customModule="ProjectX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HHI-9L-BQB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9h6-Nl-SpV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4U-XS-HpU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qel-dw-Idb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Qel-dw-Idb" firstAttribute="leading" secondItem="y4U-XS-HpU" secondAttribute="leading" id="2xe-gD-FEl"/>
+                                    <constraint firstItem="Qel-dw-Idb" firstAttribute="top" secondItem="y4U-XS-HpU" secondAttribute="top" id="8Pg-0g-6XD"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qel-dw-Idb" secondAttribute="trailing" id="CqK-9d-1kT"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qel-dw-Idb" secondAttribute="bottom" id="TUA-pU-rjO"/>
+                                    <constraint firstItem="Qel-dw-Idb" firstAttribute="centerX" secondItem="y4U-XS-HpU" secondAttribute="centerX" id="gDd-PA-mGm"/>
+                                    <constraint firstItem="Qel-dw-Idb" firstAttribute="centerY" secondItem="y4U-XS-HpU" secondAttribute="centerY" id="wmA-FT-Wa9"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="r8M-U7-dhj" id="YeQ-gC-NZ6"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxl-YP-Ppm">
+                                <rect key="frame" x="325" y="15" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="a1d-9H-ylI"/>
+                                    <constraint firstAttribute="width" constant="35" id="gre-yU-JcV"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="cancel:" destination="r8M-U7-dhj" eventType="touchUpInside" id="Zdx-FI-2yE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="y4U-XS-HpU" secondAttribute="bottom" id="2LT-qm-Ph6"/>
+                            <constraint firstItem="pzh-xJ-2t4" firstAttribute="trailing" secondItem="y4U-XS-HpU" secondAttribute="trailing" id="3PS-hJ-Uf4"/>
+                            <constraint firstItem="y4U-XS-HpU" firstAttribute="top" secondItem="HHI-9L-BQB" secondAttribute="top" id="CH0-7D-xst"/>
+                            <constraint firstItem="9h6-Nl-SpV" firstAttribute="top" secondItem="HHI-9L-BQB" secondAttribute="top" id="JcY-4p-Zre"/>
+                            <constraint firstItem="pxl-YP-Ppm" firstAttribute="top" secondItem="HHI-9L-BQB" secondAttribute="top" constant="15" id="bQe-sS-Ra4"/>
+                            <constraint firstAttribute="bottom" secondItem="9h6-Nl-SpV" secondAttribute="bottom" id="hSn-uZ-z80"/>
+                            <constraint firstItem="pzh-xJ-2t4" firstAttribute="trailing" secondItem="pxl-YP-Ppm" secondAttribute="trailing" constant="15" id="hcA-3b-qEG"/>
+                            <constraint firstItem="pzh-xJ-2t4" firstAttribute="trailing" secondItem="9h6-Nl-SpV" secondAttribute="trailing" id="lVT-QE-0MG"/>
+                            <constraint firstItem="9h6-Nl-SpV" firstAttribute="leading" secondItem="pzh-xJ-2t4" secondAttribute="leading" id="oG5-BQ-oia"/>
+                            <constraint firstItem="y4U-XS-HpU" firstAttribute="leading" secondItem="pzh-xJ-2t4" secondAttribute="leading" id="r1g-Q1-vef"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pzh-xJ-2t4"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="pxl-YP-Ppm" id="cuO-J3-0o3"/>
+                        <outlet property="ghostImageView" destination="9h6-Nl-SpV" id="32x-Ns-FrV"/>
+                        <outlet property="imageView" destination="Qel-dw-Idb" id="fyc-H0-MGl"/>
+                        <outlet property="scrollView" destination="y4U-XS-HpU" id="kAr-2R-vNX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wx5-wu-Hjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1478" y="26"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wvo-wq-vkA">
             <objects>
@@ -100,4 +168,7 @@
             <point key="canvasLocation" x="-359.19999999999999" y="25.637181409295355"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close" width="50" height="50"/>
+    </resources>
 </document>

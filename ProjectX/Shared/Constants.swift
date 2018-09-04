@@ -11,3 +11,7 @@ import Foundation
 enum SegueIdentifiers {
     static let showSearchDetailViewController = "showSearchDetailViewController"
 }
+
+enum ViewControllerIdentifiers {
+    static let listDetailViewController = "ListDetailViewController"
+}

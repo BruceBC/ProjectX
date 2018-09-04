@@ -72,6 +72,22 @@ extension SearchDetailListViewController: UICollectionViewDataSource, UICollecti
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard indexPath.row < controller.models.count else { return }
+        let model      = controller.models[indexPath.row]
+        let storyboard = UIStoryboard(name: "List", bundle: nil)
+        
+        guard
+            let vc = storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.listDetailViewController) as? ListDetailViewController
+            else {
+                return
+        }
+        
+        vc.image = model.image
+        vc.isGif = model.isGif
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         collectionView.reloadData()
