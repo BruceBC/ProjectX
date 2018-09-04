@@ -34,6 +34,7 @@ class SearchViewController: UIViewController {
     
     // MARK: - Properties
     typealias userGetterInteractor = UserGetterInteractor
+    var searchDetailViewController: SearchDetailViewController?
     var currentIndex = 0
     var defaultFollowButtonWidth = CGFloat(167.5)
     var defaultFollowButtonHeight = CGFloat(45)
@@ -53,12 +54,13 @@ class SearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        updateFollowingState()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     // MARK: - IBActions
@@ -144,6 +146,19 @@ extension SearchViewController {
     
     func setupUser() {
         //getUser()
+    }
+}
+
+// MARK: - UI Updates
+extension SearchViewController {
+    private func updateFollowingState() {
+        let user = StateManager.shared.users[self.currentIndex]
+        
+        if user.twitter.isFollowing {
+            self.isFollowingButton()
+        } else {
+            self.isNotFollowingButton()
+        }
     }
 }
 
@@ -281,13 +296,7 @@ extension SearchViewController {
         }
         
         let shrinkCompletion = { (_:Bool) in
-            let user = StateManager.shared.users[self.currentIndex]
-            
-            if user.twitter.isFollowing {
-                self.isFollowingButton()
-            } else {
-                self.isNotFollowingButton()
-            }
+            self.updateFollowingState()
         }
         
         return (shrink, enlarge, shrinkCompletion)
@@ -317,10 +326,11 @@ extension SearchViewController {
 extension SearchViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifiers.showSearchDetailViewController {
-            guard let vc             = segue.destination as? SearchDetailViewController else { return }
-            vc.transitioningDelegate = self // modal
-            vc.model                 = searchDetailPresentTransitionModel
-            vc.index                 = currentIndex
+            guard let vc               = segue.destination as? SearchDetailViewController else { return }
+            vc.transitioningDelegate   = self // modal
+            vc.model                   = searchDetailPresentTransitionModel
+            vc.index                   = currentIndex
+            searchDetailViewController = vc
         }
     }
 }
@@ -349,9 +359,13 @@ extension SearchViewController: UINavigationControllerDelegate {
             }
             return nil
         case .pop:
-//            if fromVC is SearchDetailViewController {
-//                return Something
-//            }
+            if toVC is SearchViewController {
+                let bottomView       = searchDetailViewController?.bottomView
+                let followView       = searchDetailViewController?.followerView
+                let descriptionLabel = searchDetailViewController?.descriptionLabel
+                searchDetailViewController = nil
+                return SearchDetailDismissAnimationController(bottomView: bottomView!, followView: followView!, descriptionLabel: descriptionLabel!)
+            }
             return nil
         }
     }

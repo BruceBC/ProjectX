@@ -82,6 +82,10 @@ extension SearchDetailViewController {
     private func setupBottomView() {
         bottomView.layer.masksToBounds = true
         bottomView.roundCorners(corners: [.topLeft, .topRight], size: 35)
+        
+        // Setup gesture recognizer
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapBottomView))
+        bottomView.addGestureRecognizer(gestureRecognizer)
     }
     
     private func setupButtons() {
@@ -110,14 +114,12 @@ extension SearchDetailViewController {
     }
 }
 
-// MARK: Transition Delegate
-//extension SearchDetailViewController: UIViewControllerTransitioningDelegate {
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        var frame = bottomView.frame
-//        frame.origin.y = followerView.frame.origin.y
-//        return DetailPresentAnimationController(bottomView.frame, model: PersonDetailViewModel(name: "Bruce Colby", state: "Ohio", description: "No one cares...", image: #imageLiteral(resourceName: "trainGuy")))
-//    }
-//}
+// MARK: - Gesture Actions
+extension SearchDetailViewController {
+    @objc func didTapBottomView() {
+        self.navigationController?.popViewController(animated: true)
+    }
+}
 
 // MARK: - Helpers
 extension SearchDetailViewController {
