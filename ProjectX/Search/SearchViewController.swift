@@ -159,6 +159,9 @@ extension SearchViewController {
         } else {
             self.isNotFollowingButton()
         }
+        
+        // Update follower counter
+        self.followerCountLabel.text = StateManager.shared.users[currentIndex].twitter.followers.prettyCount
     }
 }
 
