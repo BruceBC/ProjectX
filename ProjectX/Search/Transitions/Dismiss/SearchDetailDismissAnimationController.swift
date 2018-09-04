@@ -9,14 +9,16 @@
 import UIKit
 
 class SearchDetailDismissAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
-    let bottomView:       UIView
-    let followView:       UIView
-    let descriptionLabel: UILabel
+    let interactionController: SearchSwipeDismissInteractionController?
+    let bottomView:            UIView
+    let followView:            UIView
+    let descriptionLabel:      UILabel
     
-    init(bottomView: UIView, followView: UIView, descriptionLabel: UILabel) {
-        self.bottomView       = bottomView
-        self.followView       = followView
-        self.descriptionLabel = descriptionLabel
+    init(bottomView: UIView, followView: UIView, descriptionLabel: UILabel, interactionController: SearchSwipeDismissInteractionController?) {
+        self.bottomView            = bottomView
+        self.followView            = followView
+        self.descriptionLabel      = descriptionLabel
+        self.interactionController = interactionController
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {

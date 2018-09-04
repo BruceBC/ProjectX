@@ -360,14 +360,29 @@ extension SearchViewController: UINavigationControllerDelegate {
             return nil
         case .pop:
             if toVC is SearchViewController {
-                let bottomView       = searchDetailViewController?.bottomView
-                let followView       = searchDetailViewController?.followerView
-                let descriptionLabel = searchDetailViewController?.descriptionLabel
-                searchDetailViewController = nil
-                return SearchDetailDismissAnimationController(bottomView: bottomView!, followView: followView!, descriptionLabel: descriptionLabel!)
+                guard
+                    let vc                     = searchDetailViewController,
+                    let bottomView             = vc.bottomView,
+                    let followView             = vc.followerView,
+                    let descriptionLabel       = vc.descriptionLabel
+                else { return nil }
+                let interactionController  = vc.swipeInteractionController
+                return SearchDetailDismissAnimationController(bottomView: bottomView, followView: followView, descriptionLabel: descriptionLabel, interactionController: interactionController)
             }
             return nil
         }
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        guard
+            let animator = animationController as? SearchDetailDismissAnimationController,
+            let interactionController = animator.interactionController,
+            interactionController.interactionInProgress
+        else {
+            return nil
+        }
+        
+        return interactionController
     }
 }
 

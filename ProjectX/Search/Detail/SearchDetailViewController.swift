@@ -32,8 +32,9 @@ class SearchDetailViewController: UIViewController {
     override var prefersStatusBarHidden: Bool { return true }
     
     // MARK: Properties
-    var model: SearchDetailPresentTransitionViewModel?
-    var index: Int?
+    var swipeInteractionController: SearchSwipeDismissInteractionController?
+    var model:                      SearchDetailPresentTransitionViewModel?
+    var index:                      Int?
     var defaultFollowButtonWidth  = CGFloat(167.5)
     var defaultFollowButtonHeight = CGFloat(45)
 
@@ -78,7 +79,7 @@ class SearchDetailViewController: UIViewController {
 // MARK: - Setup
 extension SearchDetailViewController {
     private func setupTransition() {
-//        self.transitioningDelegate = self
+        swipeInteractionController = SearchSwipeDismissInteractionController(viewController: self, view: bottomView)
     }
     
     private func setupFollowerView() {
@@ -88,10 +89,6 @@ extension SearchDetailViewController {
     private func setupBottomView() {
         bottomView.layer.masksToBounds = true
         bottomView.roundCorners(corners: [.topLeft, .topRight], size: 35)
-        
-        // Setup gesture recognizer
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapBottomView))
-        bottomView.addGestureRecognizer(gestureRecognizer)
     }
     
     private func setupButtons() {
