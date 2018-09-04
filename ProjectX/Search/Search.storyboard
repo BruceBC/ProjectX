@@ -183,6 +183,8 @@
                     <navigationItem key="navigationItem" id="W5Q-wJ-0hR"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bottomInnerView" destination="lf3-fy-lhZ" id="jp6-Hn-a5X"/>
+                        <outlet property="bottomInnerViewTopConstraint" destination="X9p-wi-1uw" id="eRH-ic-N8k"/>
                         <outlet property="bottomView" destination="qV6-Mn-7eG" id="9Ly-NS-S9m"/>
                         <outlet property="bottomViewBottomConstraint" destination="mYx-EC-5tP" id="m13-fW-SL0"/>
                         <outlet property="followButton" destination="gNJ-oZ-bGC" id="VwN-0s-LfI"/>

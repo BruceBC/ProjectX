@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var followerView: UIView!
     @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var bottomInnerView: UIView!
     @IBOutlet weak var followerStackView: UIStackView!
     @IBOutlet weak var followerCountLabel: UILabel!
     @IBOutlet weak var followerLabel: UILabel!
@@ -28,9 +29,10 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var followButton: UIButton!
-    @IBOutlet weak var followButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var followButtonWidthConstraint:  NSLayoutConstraint!
     @IBOutlet weak var followButtonHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bottomViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomViewBottomConstraint:   NSLayoutConstraint!
+    @IBOutlet weak var bottomInnerViewTopConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
     typealias userGetterInteractor = UserGetterInteractor
@@ -184,39 +186,33 @@ extension SearchViewController {
     }
     
     private func getUserSuccess(_ user: User) {
-        let y = CGFloat(15)
-        let (nameY, locationY) = (self.nameLabel.center.y, self.locationLabel.center.y)
+        // (Harcoded: b/c otherwise it won't keep its original position if user swipes really fast)
+        let bottomInnerViewTop: CGFloat = 40 // bottomInnerViewTopConstraint.constant
         let (followerViewShrink, followerViewEnlarge) = followViewAnimations()
-        let (followButtonShrink, followButtonEnlarge, followButtonShrinkCompletion) = followButtonTransition()
+
+        // (Harcoded: b/c otherwise it won't keep its original position if user swipes really fast)
+        bottomInnerViewTopConstraint.constant = 60 // bottomInnerView.frame.size.height
         
         // Define Animations
         let shrink = {
-            self.nameLabel.alpha     = 0
-            self.locationLabel.alpha = 0
-            
-            self.nameLabel.center.y  = self.nameLabel.center.y + y
-            self.locationLabel.center.y  = self.locationLabel.center.y + y
+            self.bottomInnerView.alpha = 0
             
             followerViewShrink()
-            followButtonShrink()
+            
             self.view.layoutIfNeeded()
         }
         
         let enlarge = {
-            self.nameLabel.alpha     = 1
-            self.locationLabel.alpha = 1
-            
-            self.nameLabel.center.y  = nameY
-            self.locationLabel.center.y  = locationY
-            
+            self.bottomInnerView.alpha = 1
+
             followerViewEnlarge()
-            followButtonEnlarge()
+            
             self.view.layoutIfNeeded()
         }
         
         let shrinkCompletion = { (done: Bool) in
             self.setupLabels(user: user)
-            followButtonShrinkCompletion(done)
+            self.bottomInnerViewTopConstraint.constant = bottomInnerViewTop
             UIView.animate(withDuration: 0.3, animations: enlarge)
         }
         
@@ -269,38 +265,6 @@ extension SearchViewController {
         }
         
         return (shrink, enlarge)
-    }
-    
-    private func followButtonTransition() -> (VoidAction, VoidAction, (_:Bool) -> Void) {
-        let y: CGFloat = 15
-        let (followButtonY) = self.followButton.center.y
-        
-        // Define Animations
-        let shrink = {
-            // Alpha
-            self.followButton.alpha = 0
-            
-            // Y Position
-            self.followButton.center.y  = self.followButton.center.y + y
-            
-            self.view.layoutIfNeeded()
-        }
-        
-        let enlarge = {
-            // Alpha
-            self.followButton.alpha = 1
-            
-            // Y Position
-            self.followButton.center.y  = followButtonY
-            
-            self.view.layoutIfNeeded()
-        }
-        
-        let shrinkCompletion = { (_:Bool) in
-            self.updateFollowingState()
-        }
-        
-        return (shrink, enlarge, shrinkCompletion)
     }
 }
 
