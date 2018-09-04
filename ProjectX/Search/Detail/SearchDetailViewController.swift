@@ -13,6 +13,8 @@ class SearchDetailViewController: UIViewController {
     @IBOutlet weak var followerView:                 UIView!
     @IBOutlet weak var bottomView:                   UIView!
     @IBOutlet weak var followButton:                 UIButton!
+    @IBOutlet weak var profileButton:                UIButton!
+    @IBOutlet weak var cancelButton:                 UIButton!
     @IBOutlet weak var nameLabel:                    UILabel!
     @IBOutlet weak var stateLabel:                   UILabel!
     @IBOutlet weak var descriptionLabel:             UILabel!
@@ -67,6 +69,10 @@ class SearchDetailViewController: UIViewController {
             followerRemovedAnimation()
         }
     }
+    
+    @IBAction func cancel(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 // MARK: - Setup
@@ -97,6 +103,9 @@ extension SearchDetailViewController {
         } else {
             self.isNotFollowingButton()
         }
+        
+        profileButton.setImageColor(.white)
+        cancelButton.setImageColor(.white)
     }
     
     private func setupLabels() {
