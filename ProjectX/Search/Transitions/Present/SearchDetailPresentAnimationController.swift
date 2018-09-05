@@ -23,7 +23,7 @@ class SearchDetailPresentAnimationController: NSObject, UIViewControllerAnimated
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 2
+        return 0.6
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -73,7 +73,7 @@ class SearchDetailPresentAnimationController: NSObject, UIViewControllerAnimated
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
         
-        // Animatate
+        // Animate
         let duration: TimeInterval = 0.6
         searchDetailView.showDescription(duration: duration)
         UIView.animate(withDuration: duration, animations: animation, completion: completion)
