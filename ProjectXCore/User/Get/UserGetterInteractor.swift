@@ -13,7 +13,7 @@ public class UserGetterInteractor: UserGetter {
     public static func getUser(completion: @escaping UserGetterCompletion) {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.dateDecodingStrategy = .iso8601
-        request(RandomAPI.person).responseJSONDecodable(decoder: jsonDecoder) { (response: DataResponse<User>) in
+        AF.request(RandomAPI.person).responseJSONDecodable(decoder: jsonDecoder) { (response: DataResponse<User>) in
             completion(response.result)
         }
     }

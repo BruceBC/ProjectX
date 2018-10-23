@@ -12,7 +12,7 @@ import SWXMLHash
 
 public class CatInteractor: CatService {
     public static func getImages(completion: @escaping CatServiceCompletion) {
-        request(CatsAPI.images).response { (response: DefaultDataResponse) in
+        AF.request(CatsAPI.images).response { (response: DataResponse) in
             if let data = response.data {
                 let xml = SWXMLHash.parse(data)
                 let images = xml["response"]["data"]["images"]["image"]

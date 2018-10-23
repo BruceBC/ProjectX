@@ -1,4 +1,3 @@
 github "Alamofire/Alamofire" "alamofire5"
-gitHub "mxcl/PromiseKit" ~> 6.2.9
 github "drmohundro/SWXMLHash" ~> 4.0
 gitHub "kirualex/SwiftyGif"   ~> 4.1
